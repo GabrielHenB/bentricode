@@ -10,6 +10,14 @@ REM em xampp/php se estiver usando o XAMPP
 set CAMINHO_PHP=php
 set CAMINHO_COMPOSER=composer
 
+where /q php
+IF %ERRORLEVEL% NEQ 0 (
+	echo "PHP nao foi encontrado, instale o PHP e altere o batch ou"
+	echo "adicione o caminho ao PHP no PATH do sistema"
+	pause
+	exit /b 1
+)
+
 REM Check if Composer executable is available
 REM O where com o q retorna 0 se sucesso ou 1 se falhou a busca
 REM O exit b 1 eh codigo de erro 1 na saida do cmd
