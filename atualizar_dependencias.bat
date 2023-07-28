@@ -16,6 +16,8 @@ IF %ERRORLEVEL% NEQ 0 (
 	echo "adicione o caminho ao PHP no PATH do sistema"
 	pause
 	exit /b 1
+)ELSE (
+	echo "PHP detectado com sucesso"
 )
 
 REM Check if Composer executable is available
@@ -28,6 +30,7 @@ IF %ERRORLEVEL% NEQ 0 (
     pause
     exit /b 1
 )ELSE (
+	echo "Composer encontrado com sucesso"
 	echo "Tudo certo, o proximo comando ira abrir uma nova janela e atualizar as dependencias"
 	pause
 	cmd /k %CAMINHO_COMPOSER% update
