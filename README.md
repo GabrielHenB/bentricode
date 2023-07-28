@@ -1,4 +1,4 @@
-# bentricode
+# Bentricode Project
 A web application project written in PHP Laravel and Bootstrap for a fictional development company called Bentricode. We aim to practice 
 front-end and back-end development using this project.
 
@@ -14,5 +14,7 @@ front-end and back-end development using this project.
 ![jQuery](https://img.shields.io/badge/jquery-%230769AD.svg?style=for-the-badge&logo=jquery&logoColor=white)
 ![Bootstrap](https://img.shields.io/badge/bootstrap-%238511FA.svg?style=for-the-badge&logo=bootstrap&logoColor=white)
 
-## Who we are:
-<a href='https://br.linkedin.com/in/gabriel-braz-4a6b06224?trk=people-guest_people_search-card' >Linkedin</a>
+## Developers:
+<a href='https://br.linkedin.com/in/gabriel-braz-4a6b06224?trk=people-guest_people_search-card' >Gabriel B</a>
+<a href='https://www.linkedin.com/in/marlon-bento-461ba755?trk=people-guest_people_search-card'>Márlon Bento</a>
+
