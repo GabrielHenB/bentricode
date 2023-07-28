@@ -8,4 +8,10 @@ export default defineConfig({
             refresh: true,
         }),
     ],
+    resolve: {
+        alias: {
+            '@':'resources/js',
+            '~boots':'node_modules/bootstrap/dist/',
+        }
+    },
 });
