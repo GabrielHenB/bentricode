@@ -7,12 +7,19 @@ use Illuminate\Support\Facades\Route;
 | Web Routes
 |--------------------------------------------------------------------------
 |
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
+| Rotas da aplicacao
+| Cada string rota tem um metodo  que corresponde ao HTTP method utilizado
+| a ele associamos uma Closure ou Objeto Controller. Se for passado um controller
+| existem algumas formas de se passar [Controller::class,'metodo'] ou "Controller@metodo"
+| quando a rota string for acionada o Laravel roda o conjunto de middlewares associados
+| e chama o Controlador ou a Closure fornecida nesse arquivo
 */
 
+// ================= ROTAS PRINCIPAIS ==================
 Route::get('/', function () {
     return view('home');
-});
+})->name('home');
+
+// ================ ROTAS DE SESSAO E AUTH =============
+
+
