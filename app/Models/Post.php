@@ -12,5 +12,16 @@ class Post extends Model
     //Laravel automaticamente assume que vai ser um snake case plural do nome do Model
     //protected $table = 'posts';
 
-    protected $guarded = [];
+    //Propriedade que dita quais colunas nao podem ser alteradas por mass assignment
+    protected $guarded = ['id','created_at','updated_at'];
+
+    public function queryScope(){
+        //TODO query scoping
+    }
+
+    public function author(){
+        //Mapeia o relacionamento Post->User
+        return $this->belongsTo(\App\Models\User::class, 'user_id');
+    
+    }
 }

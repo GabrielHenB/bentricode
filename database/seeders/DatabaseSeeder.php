@@ -18,5 +18,20 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
+
+        \App\Models\User::factory(2)->create();
+        \App\Models\Post::create([
+            'user_id' => '1',
+            'title' => 'Um post',
+            'body' => "É lançado a nova Horta Automatica da Bentricode, um modelo único que garante desempenho",
+            'thumburl' => '#'
+        ]);
+        \App\Models\Post::create([
+            'user_id' => '1',
+            'title' => 'Outro post',
+            'body' => "Nunca devemos chamar descrição de hardware em VHDL de programação, lembre-se disso!!",
+            'thumburl' => '#'
+        ]);
+        \App\Models\Post::factory(2)->create();
     }
 }
