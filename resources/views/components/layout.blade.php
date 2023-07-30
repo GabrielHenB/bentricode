@@ -22,7 +22,7 @@
             </div>
             <nav class="col-9 flex navbar">
                 <a class="btn btn-dark" href="/home">Home</a>
-                <a class="btn btn-dark" href="/posts">Noticias</a>
+                <a class="btn btn-dark" href="posts">Noticias</a>
                 <a class="btn btn-dark" href="/products">Produtos</a>
                 <a class="btn btn-dark" href="/about">Sobre Nós</a>
                 <a class="btn btn-dark" href="/careers">Carreiras</a>
