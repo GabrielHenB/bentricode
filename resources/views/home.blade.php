@@ -1,4 +1,7 @@
 @extends('components.layout')
+@section('adicional')
+    - Home
+@endsection  
 @section('content')
     <div class='conteiner'>
         <div class='row'>
