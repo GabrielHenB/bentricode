@@ -20,19 +20,33 @@
                 <img style="width:180px; height: 150px;" src="{{asset('logo.PNG')}}" alt="BENTRICODE"/>
                 </a>
             </div>
-            <nav class="col-9 flex navbar">
-                <a class="btn btn-dark" href="/home">Home</a>
-                <a class="btn btn-dark" href="posts">Noticias</a>
-                <a class="btn btn-dark" href="/products">Produtos</a>
-                <a class="btn btn-dark" href="/about">Sobre Nós</a>
-                <a class="btn btn-dark" href="/careers">Carreiras</a>
-            </nav>
+            <div class="col-9 navegacao">
+                <nav class="navbar">
+                    <a class="btn btn-dark" href="/home">Home</a>
+                    <a class="btn btn-dark" href="posts">Noticias</a>
+                    <a class="btn btn-dark" href="/products">Produtos</a>
+                    <a class="btn btn-dark" href="/about">Sobre Nós</a>
+                    <a class="btn btn-dark" href="/careers">Carreiras</a>
+                </nav>
+            </div>
+            
         </div>
     </header>
     <!-- Header final -->
     <!-- Conteudo inicio -->
     {{-- Isso traz quaisquer que esteja em content no que extender essa view --}}
-    @yield('content')
+    <main class='conteiner main'>
+        <div class='row main'>
+            <div class='col-8 conteudo'>
+                    @yield('content')
+            </div>
+            <div  class='col-4 lateral'>
+                <!-- Sidebar inicio -->
+                    @include('components.sidebar')
+                <!-- Sidebar final -->
+            </div>
+        </div>
+    </main>
     <!-- Conteudo final -->
     
     <!-- Footer inicio -->

@@ -17,8 +17,5 @@ IF %ERRORLEVEL% NEQ 0 (
 )ELSE (
 	echo "PHP detectado com sucesso"
 )
-echo "Vamos abrir o servidor pelo PHP ARTISAN SERVE"
-echo "Vamos abrir o servidor em https://localhost:8000"
-start "PHPARTISANSERVETHINGY" cmd /k "%CAMINHO_PHP% artisan serve"
-echo "Comando: npm run dev"
-cmd /k "npm run dev"
+echo "Vamos migrar e semear o banco de dados"
+cmd /k "%CAMINHO_PHP% artisan migrate:fresh --seed"
