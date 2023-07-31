@@ -15,6 +15,19 @@ front-end and back-end development using this project.
 ![Bootstrap](https://img.shields.io/badge/bootstrap-%238511FA.svg?style=for-the-badge&logo=bootstrap&logoColor=white)
 
 ## Developers:
-<a href='https://br.linkedin.com/in/gabriel-braz-4a6b06224?trk=people-guest_people_search-card' >Gabriel B</a><br>
-<a href='https://www.linkedin.com/in/marlon-bento-461ba755?trk=people-guest_people_search-card'>Márlon Bento</a>
+Gabriel B <br>
+<a href="https://github.com/GabrielHenB">
+![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)
+</a>
+<a href='https://br.linkedin.com/in/gabriel-braz-4a6b06224?trk=people-guest_people_search-card' >
+![LinkedIn](https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white)
+</a><br>
+Márlon <br>
+<a href="https://github.com/marlon-bento">
+![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)
+</a>
+<a href='https://www.linkedin.com/in/marlon-bento-461ba755?trk=people-guest_people_search-card'>
+![LinkedIn](https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white)
+</a>
+
 
