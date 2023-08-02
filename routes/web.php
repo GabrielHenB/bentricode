@@ -21,7 +21,10 @@ Route::get('/', function () {
     return view('home');
 })->name('home');
 
-Route::get('/posts', [PostController::class,'index'])->name('posts');
+//Route::get('/posts', [PostController::class,'index'])->name('posts');
+
+//Cria ja endpoints CRUD-like
+Route::resource('posts',PostController::class);
 // ================ ROTAS DE SESSAO E AUTH =============
 
 

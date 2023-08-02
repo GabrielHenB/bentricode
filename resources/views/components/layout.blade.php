@@ -22,11 +22,11 @@
             </div>
             <div class="col-9 navegacao">
                 <nav class="navbar">
-                    <a class="btn btn-dark" href="/home">Home</a>
-                    <a class="btn btn-dark" href="posts">Noticias</a>
-                    <a class="btn btn-dark" href="/products">Produtos</a>
-                    <a class="btn btn-dark" href="/about">Sobre Nós</a>
-                    <a class="btn btn-dark" href="/careers">Carreiras</a>
+                    <a class="btn btn-dark" href="{{route('home')}}">Home</a>
+                    <a class="btn btn-dark" href="{{route('posts.index')}}">Noticias</a>
+                    <a class="btn btn-dark" href="products">Produtos</a>
+                    <a class="btn btn-dark" href="about">Sobre Nós</a>
+                    <a class="btn btn-dark" href="careers">Carreiras</a>
                 </nav>
             </div>
             
