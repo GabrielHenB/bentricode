@@ -15,7 +15,6 @@
             </div>
         </div>
     </div>
-
 @endsection
 @section('sidebar')
 <x-sidebar />
