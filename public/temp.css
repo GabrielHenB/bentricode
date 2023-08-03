@@ -1,0 +1,24 @@
+html{
+    
+    background-color: rgb(20,20,20);
+    color: aliceblue;
+}
+
+body{
+    background-color: rgb(20,20,20);
+    color: aliceblue;
+}
+
+header{
+    
+    
+    
+    background-color: inherit;
+}
+
+.navegacao{
+    margin-top: 20px;
+    
+}
+
+.navegacao nav a{color: rgb(216, 39, 39);}

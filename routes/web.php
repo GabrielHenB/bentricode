@@ -25,6 +25,11 @@ Route::get('/', function () {
 
 //Cria ja endpoints CRUD-like
 Route::resource('posts',PostController::class);
-// ================ ROTAS DE SESSAO E AUTH =============
 
+//Testes rota criada temporariamente
+Route::get('aboutus', function () {
+
+    return view('aboutus');
+})->name('aboutus');
+// ================ ROTAS DE SESSAO E AUTH =============
 
