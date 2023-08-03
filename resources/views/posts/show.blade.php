@@ -3,7 +3,7 @@
     - Bentricode - {{$item->title}}
 @endsection  
 @section('content')
-    <div class='conteiner'>
+    <div class='container'>
         <div class='row'>
             <x-post :item="$item" />
         </div>

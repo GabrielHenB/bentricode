@@ -1,4 +1,4 @@
-<div class='conteiner lateral'>
+<div class='container lateral'>
     <section class="posts-recentes">
         <div class="card-post-lateral">
             <h3>Titulo do Post</h3>

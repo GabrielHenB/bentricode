@@ -24,3 +24,9 @@ header{
 }
 
 .navegacao nav a{color: rgb(216, 39, 39);}
+
+.errors{
+    background-color: rgb(189, 117, 117);
+    font-family: Consolas;
+    
+}
