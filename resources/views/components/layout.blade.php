@@ -27,7 +27,7 @@
                 <nav class="navbar">
                     <a class="btn btn-dark" href="{{route('home')}}">Home</a>
                     <a class="btn btn-dark" href="{{route('posts.index')}}">Noticias</a>
-                    <a class="btn btn-dark" href="products">Produtos</a>
+                    <a class="btn btn-dark" href="produtos">Produtos</a>
                     <a class="btn btn-dark" href="{{route('aboutus')}}">Sobre Nós</a>
                     <a class="btn btn-dark" href="careers">Carreiras</a>
                 </nav>
