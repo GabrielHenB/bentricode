@@ -46,8 +46,8 @@
               <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Admin</a>
             </li>
             </ul>
-            <form class="d-flex" method="GET" action="?squery={{strip_tags(request('squery'))}}">
-                <input class="form-control me-2" type="search" name="squery" placeholder="Search" aria-label="Search">
+            <form class="d-flex" method="GET" action="{{route('search')}}?squery={{htmlspecialchars(strip_tags(request('squery')))}}">
+                <input class="form-control me-2" type="search" name="squery" placeholder="{{request('squery') ?? "Pesquisar"}}" aria-label="Search">
                 <button class="btn btn-outline-success" type="submit">Pesquisar</button>
             </form>
           </div>

@@ -26,6 +26,18 @@ Route::get('/', function () {
 //Cria ja endpoints CRUD-like
 Route::resource('posts',PostController::class);
 
+Route::get('search', function (\Illuminate\Http\Request $request) {
+    //dd($request);
+    //TODO separar em um outro objeto
+    foreach($request->all() as $chave=>$valor){
+        $request[$chave] = filter_var($valor,FILTER_SANITIZE_SPECIAL_CHARS);
+    }
+    
+    $items = \App\Models\Post::where('title','like','%'.$request['squery'].'%')->get();
+    
+    return view('search', ['items' => $items]);
+})->name('search');
+
 //Testes rota criada temporariamente
 Route::get('aboutus', function () {
 
