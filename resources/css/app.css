@@ -1,18 +1,21 @@
 @import url("~boots/css/bootstrap.min.css");
 
-html{
-    
-    background-color: rgb(20,20,20);
+footer{
     color: aliceblue;
+}
+#logo{
+    width: 100px;
+}
+body{
+    background-color: rgb(88, 86, 86);
+}
+main{
+    background-color: rgba(255, 255, 255, 0.329);
+    border: 
 }
 
-body{
-    background-color: rgb(20,20,20);
-    color: aliceblue;
-}
 
 header{
-    
     
     
     background-color: inherit;
