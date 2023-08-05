@@ -7,12 +7,14 @@
 <span class='x-small'>Criado em {{$item->created_at->diffForHumans()}} </span>
 <div class="post-corpo m-2"> {!! $item->body !!} </div>
 --}}
+
 <div class="card" style="width: 300px; margin: 10px;">
+  <div>
     <img class="card-img-top" src="{{ $item->thumburl != '#' ? asset($item->thumburl) : asset('placeholder.png')}}" alt="Card image cap">
     <div class="card-body">
-      <h5 class="card-title">
-        <a class="p-2 m-2 post-titulo" href="{{route('posts.show', $item->id)}}">
-            {{$item->title}}
+      <h5 class="card-title text-center">
+        <a class="post-titulo" href="{{route('posts.show', $item->id)}}">
+          {{$item->title}}
         </a>
       </h5>
       <h6 class="card-subtitle muted"><span class='autor'>Por {{$item->author->name}} </span></h6>
@@ -27,4 +29,7 @@
       <a href="{{route('posts.show', $item->id)}}" class="btn btn-primary">Leia mais</a>
     </div>
   </div>
+
+</div>
+
 <!-- Componente temporario pra um card de cada post. Isso sera replicado posts foreach -->
