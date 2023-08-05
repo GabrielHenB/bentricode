@@ -46,8 +46,12 @@
               <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Admin</a>
             </li>
             </ul>
-            <form class="d-flex" method="GET" action="{{route('search')}}?squery={{htmlspecialchars(strip_tags(request('squery')))}}">
-                <input class="form-control me-2" type="search" name="squery" placeholder="{{request('squery') ?? "Pesquisar"}}" aria-label="Search">
+            <form class="d-flex" method="GET" 
+            action="{{route('search')}}?squery={{htmlspecialchars(strip_tags(request('squery')))}}"
+            >
+                <input class="form-control me-2" type="search" name="squery"
+                 placeholder="{{request('squery') ?? "Pesquisar"}}" 
+                 aria-label="Search">
                 <button class="btn btn-outline-success" type="submit">Pesquisar</button>
             </form>
           </div>
@@ -64,7 +68,7 @@
             </div>
             <div  class='col-4 lateral'>
                 <!-- Sidebar inicio -->
-                    @include('components.sidebar')
+                    @yield('sidebar')
                 <!-- Sidebar final -->
             </div>
         </div>
