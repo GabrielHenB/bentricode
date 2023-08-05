@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Bentricode Services @yield('adicional')</title>
-    <link rel="icon" href="/bentricon.ico" >
+    <link rel="icon" href="{{asset('bentricon.ico')}}" >
     {{-- <link rel='stylesheet' src='{{asset('shared/app.css')}}'> --}}
     {{-- O vite carrega e constroi as dependencias --}}
     @vite(['resources/css/app.css','resources/js/app.js'])
