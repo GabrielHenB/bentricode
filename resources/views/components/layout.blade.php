@@ -13,6 +13,7 @@
     <!-- teste nao colocar aqui -->
     {{--<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">--}}
     {{--<link rel='stylesheet' src='{{asset('temp.css')}}' /> <!-- teste -->--}}
+    {{-- <script src='//unpkg.com/alpinejs' defer></script> --}}
 </head>
 
 <body>
@@ -34,7 +35,7 @@
               <a class="nav-link" href="{{route('posts.index')}}">Posts</a>
             </li>
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <a class="nav-link dropdown-toggle"  href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Visitante
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -72,7 +73,7 @@
       </div>
       <div class='col-4 lateral'>
         <!-- Sidebar inicio -->
-        @include('components.sidebar')
+        <x-sidebar-component />
         <!-- Sidebar final -->
       </div>
     </div>

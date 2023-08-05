@@ -8,7 +8,7 @@
 <div class="post-corpo m-2"> {!! $item->body !!} </div>
 --}}
 <div class="card" style="width: 300px; margin: 10px;">
-    <img class="card-img-top" src="{{asset('placeholder.png')}}" alt="Card image cap">
+    <img class="card-img-top" src="{{ $item->thumburl != '#' ? asset($item->thumburl) : asset('placeholder.png')}}" alt="Card image cap">
     <div class="card-body">
       <h5 class="card-title">
         <a class="p-2 m-2 post-titulo" href="{{route('posts.show', $item->id)}}">
