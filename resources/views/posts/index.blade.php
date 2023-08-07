@@ -15,7 +15,7 @@
             
         </div>
         <div class="conteiner">
-            <div style="" class="row cards-posts">
+            <div class="row cards-posts">
                 <!-- Exemplo de uso de componentes blade. Eles sempre tem o <x-(namespace.componente)> -->
                 @foreach($post as $item)
                     <x-post :item="$item" />
