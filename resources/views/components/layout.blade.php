@@ -48,6 +48,9 @@
               </ul>
             </li>
             <li class="nav-item">
+              <a class="nav-link" href="{{route('posts.index')}}">Mangás</a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Admin</a>
             </li>
           </ul>
@@ -67,10 +70,10 @@
   <main class='container main text-white p-0'>
     @yield('carrosel')
     <div class='row main'>
-      <div class='col-9 conteudo'>
+      <div class='col-md-9 col-sm-12 conteudo'>
         @yield('content')
       </div>
-      <div class='col-3 lateral'>
+      <div class='col-md-3 d-none d-lg-block lateral'>
         <!-- Sidebar inicio -->
         <div class='container lateral border-start border-black border-2'>
           <section class="posts-recentes p-1">

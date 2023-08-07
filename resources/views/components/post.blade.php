@@ -8,16 +8,16 @@
 <div class="post-corpo m-2"> {!! $item->body !!} </div>
 --}}
 
-<div class="card" style="width: 300px; margin: 10px;">
+<div class="card p-0 border-0" style="width: 280px; margin: 10px;">
   <div>
     <img class="card-img-top" src="{{ $item->thumburl != '#' ? asset($item->thumburl) : asset('placeholder.png')}}" alt="Card image cap">
     <div class="card-body">
       <h5 class="card-title text-center">
-        <a class="post-titulo" href="{{route('posts.show', $item->id)}}">
+        <a class="post-titulo fs-5" href="{{route('posts.show', $item->id)}}">
           {{$item->title}}
         </a>
       </h5>
-      <h6 class="card-subtitle muted"><span class='autor'>Por {{$item->author->name}} </span></h6>
+      <h6 class="card-subtitle muted "><span class='autor'>Por {{$item->author->name}} </span></h6>
       <h6 class="card-subtitle mb-2 muted">
         <span class='criado-em'>
           Há {{$item->created_at->diffForHumans()}}
