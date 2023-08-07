@@ -1,6 +1,6 @@
 @echo off
 REM Isso acima faz ele nao replicar os comandos na tela
-echo "=======[ CONSTRUTOR DO PROJETO ]========="
+echo "========[ CONSTRUTOR DO PROJETO ]========="
 echo "Iniciando..."
 echo "Se algo der errado verifique se o PHP existe como variavel global"
 echo "Se nao existir, altere os SET abaixo no .bat:"
