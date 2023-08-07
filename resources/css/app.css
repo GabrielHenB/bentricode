@@ -57,3 +57,22 @@ main{
 .carousel-inner{
     background-color: rgba(0, 0, 0, 0.808);
 }
+
+/* SHOW.BLADE.PHP */
+.box-post{
+    background-color: rgb(22,22,22);
+}
+.post-thumb img{
+    display: block;
+    width: 180px; /* temporario depois mudar isso está irresponsivo */
+}
+.titulos-posts{
+    text-align: left;
+    padding-left: 2px;
+    padding-top: 10px;
+    font-size: 12pt;
+    font-family: inherit;
+}
+
+
+/* FIM DO SHOW.BLADE.PHP */
