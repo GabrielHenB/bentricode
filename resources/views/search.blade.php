@@ -27,5 +27,5 @@
 
 @endsection
 @section('sidebar')
-<x-sidebar />
+<x-sidebar-component />
 @endsection
