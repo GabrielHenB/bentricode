@@ -6,13 +6,18 @@
     </div>
     <div class="carousel-inner">
         <div class="carousel-item active">
-            <img src="https://cdn.shopify.com/app-store/listing_images/651554b14928e31b2c6225bb77d232cd/promotional_image/CPCSsvP4lfYCEAE=.png?height=900&width=1600" class="d-block w-100" alt="...">
+            <img src="{{asset('carousel2.png')}}" class="d-block w-100" alt="Carousel Dois">
         </div>
         <div class="carousel-item">
-            <img src="https://1e5deb1403.cbaul-cdnwnd.com/c2e7ad80b91048c6e130e5e0398125a0/200000112-bb071bcf6e/BANNER-SLIDE.png" class="d-block w-100" alt="...">
+            <img src="{{asset('carousel1.PNG')}}" class="d-block w-100" alt="Carousel Um">
         </div>
         <div class="carousel-item">
-            <img src="https://img.gamewith.net/article/thumbnail/rectangle/25162.png" class="d-block w-100" alt="...">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/6hr0V0Caaqs"
+             title="YouTube video player" 
+             frameborder="0" 
+             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen>
+            </iframe>
         </div>
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">

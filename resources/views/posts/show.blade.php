@@ -9,9 +9,30 @@
 {{-- SECAO DO CONTEUDO --}}
 
 @section('content')
-    <div class='container'>
-        <div class='row'>
-            <x-post :item="$item" />
+    <div class="container box-post">
+        <div class="row box-post-header">
+            <div class="col-3 post-thumb">
+                <img src='{{ $item->thumburl != '#' ? asset($item->thumburl) : asset('placeholder.png') }}' alt="Thumbnail" >
+            </div>
+            <div class="col-9 post-title">
+                <h1 class="titulos-posts">{{ $item->title }}</h1>
+            </div>
+        </div>
+        <div class="row box-post-meta">
+            <div class="col-6 post-published">
+                <span class="x-small">{{ $item->created_at->diffForHumans() }}</span>
+            </div>
+            <div class="col-6 post-author">
+                <span class="x-small autores">{{ $item->author->name }}</span>
+            </div>
+        </div>
+        <div class="row box-post-inside">
+            <div class="col-12 box-post-content">
+                
+                    {{-- Isso sera interpretado como HTML interno quando nao escapado desse jeito --}}
+                    {!! $item->body !!}
+                
+            </div>
         </div>
     </div>
 
