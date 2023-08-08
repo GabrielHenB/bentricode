@@ -34,6 +34,9 @@
             <li class="nav-item">
               <a class="nav-link" href="{{route('posts.index')}}">Posts</a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{route('posts.index')}}">Projetos</a>
+            </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Visitante
@@ -46,9 +49,6 @@
                 </li>
                 <li><a class="dropdown-item" style='color:darkred;' href="#">Sair</a></li>
               </ul>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{{route('posts.index')}}">Mangás</a>
             </li>
             <li class="nav-item">
               <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Admin</a>
@@ -71,21 +71,12 @@
     @yield('carrosel')
     
     <div class='d-flex main'>
-      <div class='col-lg-9 col-md-12 conteudo'>
+      <!--<div class='col-lg-9 col-md-12 conteudo'> -->
         @yield('content')
-      </div>
-      <div class='col-3 d-none d-md-none d-sm-none d-lg-block lateral'>
-        <!-- Sidebar inicio -->
-        <div class='container lateral border-start border-black border-2 '>
-          <section class="posts-recentes p-1">
-            <div class="card text-dark bg-light mb-3" style="max-width: 18rem;">
-              <div class="card-header">Mais vistos</div>
-              <x-sidebar-component />
-              <!-- Sidebar final -->
-            </div>
-          </section>
-        </div>
-      </div>
+      <!-- </div> -->
+      <!-- Sidebar inicio (delegado as outras views) -->
+      @yield('sidebar')
+      <!-- Sidebar final -->
     </div>
   </main>
   <!-- Conteudo final -->

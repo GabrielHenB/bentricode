@@ -9,6 +9,7 @@
 {{-- SECAO DO CONTEUDO --}}
 
 @section('content')
+<div class='col-lg-9 col-md-12 conteudo'>
     <div class='container'>
         <div class='row'>
             <div class="col-3 titulo-esquerda">
@@ -19,7 +20,7 @@
             </div>
         </div>
     </div>
-
+</div>
 @endsection
 
 {{-- SECAO DA BARRA LATERAL DIREITA --}}

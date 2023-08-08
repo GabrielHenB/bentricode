@@ -3,6 +3,7 @@
     404 - Bentricode
 @endsection  
 @section('content')
+<div class='col-lg-9 col-md-12 conteudo'>
     <div class='container errors'>
         <div class='row'>
             <div class="col-12">
@@ -15,6 +16,7 @@
             </div>
         </div>
     </div>
+</div>   
 @endsection
 @section('sidebar')
 <x-sidebar />

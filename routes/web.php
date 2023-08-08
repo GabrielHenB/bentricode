@@ -32,13 +32,16 @@ Route::get('search', function (\Illuminate\Http\Request $request) {
     foreach($request->all() as $chave=>$valor){
         $request[$chave] = filter_var($valor,FILTER_SANITIZE_SPECIAL_CHARS);
     }
+    if($request['squery'] == ""){
+        $items = new \Illuminate\Support\Collection();
+    }else{
+        $items = \App\Models\Post::where('title','like','%'.$request['squery'].'%')->get();
+    }
     
-    $items = \App\Models\Post::where('title','like','%'.$request['squery'].'%')->get();
     
     return view('search', ['items' => $items]);
 })->name('search');
 
-//Testes rota criada temporariamente
 Route::get('aboutus', function () {
 
     return view('aboutus');

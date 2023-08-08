@@ -9,7 +9,12 @@
 {{-- SECAO DO CONTEUDO --}}
 
 @section('content')
+<<<<<<< HEAD
     <div class="text-center ">
+=======
+<div class='col-lg-9 col-md-12 conteudo'>
+    <div class="text-center">
+>>>>>>> c0a24e826625d1835082bc4b88405361ad756ac0
         <blockquote class="blockquote text-center text-light  m-0">
             <p class="mb-2">{{ $item->title }}</p>
             <footer class="blockquote-footer ">Post: {{ $item->created_at->diffForHumans() }} by <cite
@@ -20,9 +25,13 @@
             alt="Thumbnail">
     </div>
     <p class="lead mt-3 ms-2 paragrafos text-justify">{!! $item->body !!}</p>
+</div>    
 @endsection
 
 {{-- SECAO DA BARRA LATERAL DIREITA --}}
 
 @section('sidebar')
+
+    <x-sidebar-component />
+
 @endsection

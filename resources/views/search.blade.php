@@ -8,14 +8,11 @@
     <div class='container'>
         <h3 class="d-inline bg-dark bg-opacity-50 p-3"><span>Resultados para a
                 pesquisa: </span> &nbsp;&nbsp;{{ request('squery') ?? 'Pesquisar' }}</h3>
-        @foreach ($items as $item)
-            
-
-                
-                    <x-post :item="$item" />
-                
-           
-        @endforeach
+        <div class="row cards-posts">
+            @foreach ($items as $item)
+                <x-post :item="$item" />
+            @endforeach
+        </div>
     </div>
     @else
         <div class="container ">
