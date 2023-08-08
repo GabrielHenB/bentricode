@@ -11,7 +11,33 @@
 
 @section('content')
 <div class='container'>
-    
+    <div class='row introduction-bentricode text-dark align-items-center p-3'>
+        
+    </div>
+    <div class='row introduction-marlon text-dark align-items-center p-3'>
+        <div class="col-12 col-md-8">
+            <blockquote class="blockquote  ">
+                <p class="display-6">Márlon Bento Azevedo</p>
+                <footer class="blockquote-footer ">Habilidades:  <cite
+                        title="Título da fonte">Front-end, Back-End, API</cite></footer>
+            </blockquote>
+            <p class="text-muted">
+                Estudante de Engenharia de Computação com habilidades em front-end e back-end, atualmente a procura de estágio na area de Desenvolvimento Web
+            </p>
+            <h2 class="fs-5">Habilidades:</h2>
+            <ul class="text-muted">
+                <li>HTML, CSS, JavaScript / Avançado</li>
+                <li>Bootstrap 5 / Intermediário</li>
+                <li>Java com Spring</li>
+                <li>PHP/MySql</li>
+                <li>Designer / Básico</li>
+            </ul>
+
+        </div>
+        <div class="col-12 col-md-4">
+            <img class="img-fluid rounded border-3  " style="" src="marlon.jpg" alt="">
+        </div>
+    </div>
     <div class='row'>
         <h2 class="col-12">Bentricode: Inovação e Excelência em Soluções de Software</h2>
         <p class="col-12">

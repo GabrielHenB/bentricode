@@ -69,13 +69,13 @@
   {{-- Isso traz quaisquer que esteja em content no que extender essa view --}}
   <main class='container main text-white p-0'>
     @yield('carrosel')
-    <div class='row main'>
-      <div class='col-md-9 col-sm-12 conteudo'>
+    <div class='d-flex main'>
+      <div class='col-lg-9 col-md-12 conteudo'>
         @yield('content')
       </div>
-      <div class='col-md-3 d-none d-lg-block lateral'>
+      <div class='col-3 d-none d-md-none d-sm-none d-lg-block lateral'>
         <!-- Sidebar inicio -->
-        <div class='container lateral border-start border-black border-2'>
+        <div class='container lateral border-start border-black border-2 '>
           <section class="posts-recentes p-1">
             <div class="card text-dark bg-light mb-3" style="max-width: 18rem;">
               <div class="card-header">Mais vistos</div>

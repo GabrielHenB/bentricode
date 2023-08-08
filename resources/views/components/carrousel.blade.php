@@ -6,18 +6,13 @@
     </div>
     <div class="carousel-inner">
         <div class="carousel-item active">
-            <img src="{{asset('carousel2.png')}}" class="d-block w-100" alt="Carousel Dois">
+            <img src="banner3.jpg" class="d-block w-100" alt="Carousel Dois">
         </div>
         <div class="carousel-item">
-            <img src="{{asset('carousel1.PNG')}}" class="d-block w-100" alt="Carousel Um">
+            <img src="banner4.jpg" class="d-block w-100" alt="Carousel Um">
         </div>
         <div class="carousel-item">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/6hr0V0Caaqs"
-             title="YouTube video player" 
-             frameborder="0" 
-             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowfullscreen>
-            </iframe>
+            <img src="banner2.jpg" class="d-block w-100" alt="Carousel Um">
         </div>
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">

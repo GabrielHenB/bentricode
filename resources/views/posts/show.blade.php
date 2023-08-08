@@ -3,43 +3,26 @@
 {{-- SECAO DO TITULO DA PAGINA ISSO APARECE NO NAVEGADOR --}}
 
 @section('adicional')
-    - Bentricode - {{$item->title}}
-@endsection  
+    - Bentricode - {{ $item->title }}
+@endsection
 
 {{-- SECAO DO CONTEUDO --}}
 
 @section('content')
-    <div class="container box-post">
-        <div class="row box-post-header">
-            <div class="col-3 post-thumb">
-                <img src='{{ $item->thumburl != '#' ? asset($item->thumburl) : asset('placeholder.png') }}' alt="Thumbnail" >
-            </div>
-            <div class="col-9 post-title">
-                <h1 class="titulos-posts">{{ $item->title }}</h1>
-            </div>
-        </div>
-        <div class="row box-post-meta">
-            <div class="col-6 post-published">
-                <span class="x-small">{{ $item->created_at->diffForHumans() }}</span>
-            </div>
-            <div class="col-6 post-author">
-                <span class="x-small autores">{{ $item->author->name }}</span>
-            </div>
-        </div>
-        <div class="row box-post-inside">
-            <div class="col-12 box-post-content">
-                
-                    {{-- Isso sera interpretado como HTML interno quando nao escapado desse jeito --}}
-                    {!! $item->body !!}
-                
-            </div>
-        </div>
+    <div class="text-center">
+        <blockquote class="blockquote text-center text-light  m-0">
+            <p class="mb-2">{{ $item->title }}</p>
+            <footer class="blockquote-footer ">Post: {{ $item->created_at->diffForHumans() }} by <cite
+                    title="Título da fonte">{{ $item->author->name }}</cite></footer>
+        </blockquote>
+        <img class="img-fluid img-fluid rounded w-50 "
+            src='{{ $item->thumburl != '#' ? asset($item->thumburl) : asset('placeholder.png') }}'
+            alt="Thumbnail">
     </div>
-
+    <p class="lead mt-3 ms-2 paragrafos text-justify">{!! $item->body !!}</p>
 @endsection
 
 {{-- SECAO DA BARRA LATERAL DIREITA --}}
 
 @section('sidebar')
-
 @endsection
