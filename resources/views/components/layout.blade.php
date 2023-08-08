@@ -69,6 +69,7 @@
   {{-- Isso traz quaisquer que esteja em content no que extender essa view --}}
   <main class='container main text-white p-0'>
     @yield('carrosel')
+    
     <div class='d-flex main'>
       <div class='col-lg-9 col-md-12 conteudo'>
         @yield('content')

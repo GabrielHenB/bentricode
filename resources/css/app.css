@@ -109,6 +109,8 @@ main {
     font-size: 12pt;
     font-family: inherit;
 }
-
+.fundo-post{
+    background-color: white;
+}
 
 /* FIM DO SHOW.BLADE.PHP */

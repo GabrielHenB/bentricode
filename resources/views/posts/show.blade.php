@@ -9,7 +9,7 @@
 {{-- SECAO DO CONTEUDO --}}
 
 @section('content')
-    <div class="text-center">
+    <div class="text-center ">
         <blockquote class="blockquote text-center text-light  m-0">
             <p class="mb-2">{{ $item->title }}</p>
             <footer class="blockquote-footer ">Post: {{ $item->created_at->diffForHumans() }} by <cite
