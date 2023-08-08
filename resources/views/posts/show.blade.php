@@ -9,6 +9,7 @@
 {{-- SECAO DO CONTEUDO --}}
 
 @section('content')
+<div class='col-lg-9 col-md-12 conteudo'>
     <div class="text-center">
         <blockquote class="blockquote text-center text-light  m-0">
             <p class="mb-2">{{ $item->title }}</p>
@@ -20,9 +21,13 @@
             alt="Thumbnail">
     </div>
     <p class="lead mt-3 ms-2 paragrafos text-justify">{!! $item->body !!}</p>
+</div>    
 @endsection
 
 {{-- SECAO DA BARRA LATERAL DIREITA --}}
 
 @section('sidebar')
+
+    <x-sidebar-component />
+
 @endsection
