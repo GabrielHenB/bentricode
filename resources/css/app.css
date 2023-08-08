@@ -1,8 +1,16 @@
 @import url("~boots/css/bootstrap.min.css");
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+.botao-meunu{
+    
+}
+.visitante{
+    background-color: white;
+    
 
+}
 footer {
     color: aliceblue;
+    
 }
 
 .paragrafos {
@@ -109,7 +117,9 @@ main {
     font-size: 12pt;
     font-family: inherit;
 }
-
+.fundo-post{
+    background-color: white;
+}
 
 /* FIM DO SHOW.BLADE.PHP */
 
