@@ -19,6 +19,6 @@ IF %ERRORLEVEL% NEQ 0 (
 )
 echo "Vamos abrir o servidor pelo PHP ARTISAN SERVE"
 echo "Vamos abrir o servidor em https://localhost:8000"
-REM start "PHPARTISANSERVETHINGY" cmd /k "%CAMINHO_PHP% artisan serve"
+REM start "PHP ARTISAN" cmd /k "%CAMINHO_PHP% artisan serve"
 echo "Comando: npm run dev"
 cmd /k "npm run dev"

@@ -7,7 +7,6 @@
         <div class='row'>
             <div class="col-12">
                 <h2 style='color:darkred'>ERRO 404</h2>
-
             </div>
         </div>
         <div class='row'>
