@@ -13,10 +13,13 @@ return new class extends Migration
     {
         Schema::create('produtos', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->text('description');
-            $table->date('start_date');
-            $table->text('techs');
+            $table->string('name'); //O nome
+            $table->string('thumburl'); //Possivel link para uma foto do projeto
+            $table->boolean('is_completo'); //O projeto ja esta completo
+            $table->string('description'); //Uma curta descricao que aparece nos cards
+            $table->text('body'); //Conteudo em HTML do projeto
+            $table->date('start_date'); //Data de inicio do projeto
+            $table->string('techs'); //Tecnologias utilizadas
             $table->timestamps();
         });
     }

@@ -12,7 +12,9 @@ class ProdutoController extends Controller
      */
     public function index()
     {
-        //
+        $produto = \App\Models\Produto::latest()->paginate(4);
+
+        return view('produtos.index', ['produtos' => $produto]);
     }
 
     /**
@@ -34,9 +36,12 @@ class ProdutoController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Produto $produto)
+    public function show(string $id)
     {
-        //
+        $id = htmlspecialchars(strip_tags($id));
+        $item = \App\Models\Produto::findOrFail($id);
+        
+        return view('produtos.show', ['item' => $item]);
     }
 
     /**

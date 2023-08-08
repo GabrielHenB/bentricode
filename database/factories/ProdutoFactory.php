@@ -17,7 +17,13 @@ class ProdutoFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            "name" => $this->faker->name(),
+            "thumburl" => "#",
+            "is_completo" => $this->faker->boolean(),
+            "description" => $this->faker->text(100),
+            "body" => $this->faker->text(),
+            "start_date" => $this->faker->date(),
+            "techs" => "Algumas Tecnologias",
         ];
     }
 }

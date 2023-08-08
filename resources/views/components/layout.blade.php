@@ -35,7 +35,7 @@
               <a class="nav-link" href="{{route('posts.index')}}">Posts</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{{route('posts.index')}}">Projetos</a>
+              <a class="nav-link" href="{{route('projetos.index')}}">Projetos</a>
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">

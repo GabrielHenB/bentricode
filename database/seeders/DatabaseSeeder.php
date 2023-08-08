@@ -116,5 +116,147 @@ class DatabaseSeeder extends Seeder
             'thumburl' => 'pl8.jpg'
         ]);
         //\App\Models\Post::factory(2)->create();
+        \App\Models\Produto::create([
+            "name" => "Horta Automática com Reservatório",
+            "thumburl" => "#",
+            "is_completo" => "1",
+            "description" => "Horta inteligente desenvolvida usando ESP-32, FreeRT OS e MQTT",
+            "techs" => "C, C++, Python, ESP-32, FreeRTOS, MQTT",
+            "start_date" => "2022-08-02",
+            "body" => "
+            <p>Desenvolvemos uma Horta Automática e Inteligente que, graças a um suporte IoT era capaz
+            de informar ao cliente valores importantes, como, Umidade e Temperatura, através de um
+            aplicativo.</p>
+            <p>Além disso, graças ao uso do sistema operacional FreeRTOS em tempo real, nosso sistema
+            monitorava e automaticamente irrigava as plantas, quando os sensores observavam necessidade.
+            </p>
+            <h5>Demonstração: </h5>
+            <iframe width='560' 
+            height='315' 
+            src='https://www.youtube.com/embed/6hr0V0Caaqs' title='YouTube video player' 
+            frameborder='0' 
+            allow='accelerometer; 
+            autoplay; clipboard-write; 
+            encrypted-media; gyroscope; 
+            picture-in-picture; web-share'
+             allowfullscreen></iframe>
+            ",
+        ]);
+        \App\Models\Produto::create([
+            "name" => "Microprocessador PUC-222",
+            "thumburl" => "#",
+            "is_completo" => "1",
+            "description" => "Descrição de um microprocessador em VHDL",
+            "techs" => "VHDL, Assembly",
+            "start_date" => "2022-10-22",
+            "body" => "
+            <p>É um projeto de um microprocessador em VHDL</p>
+            <h5>Demonstração: </h5> 
+            Sem demonstração no momento.
+            ",
+        ]);
+        \App\Models\Produto::create([
+            "name" => "Portal de Filmes Nazarick Movies",
+            "thumburl" => "proj1.PNG",
+            "is_completo" => "1",
+            "description" => "Websites de um portal de filmes de animação com acesso a API do themoviedb",
+            "techs" => "Javascript, HTML, CSS, Bootstrap, jQuery",
+            "start_date" => "2020-08-02",
+            "body" => "
+            <p>Desenvolvido por Gabriel, o projeto de um portal de filmes de animação, que lista filmes
+            obtidos da API do themoviedb</p>
+            <h5>Demonstração: </h5> 
+            <a href='https://sitediwt2.undefmoonface.repl.co/' style='text-decoration: none'>
+            Teste o Website Aqui
+            </a>
+            ",
+        ]);
+        \App\Models\Produto::create([
+            "name" => "API REST em SpringBoot para Transportadora",
+            "thumburl" => "projspring.jpeg",
+            "is_completo" => "1",
+            "description" => "Uma API REST desenvolvida com a framework Springboot em Java!",
+            "techs" => "Java, Spring, Springboot",
+            "start_date" => "2022-11-10",
+            "body" => "
+            <p>Desenvolvida por Márlon Bento, a API RESTful foi escrita com uso da framework SpringBoot
+             do ecossistema Spring</p>
+            <p>O sistema analisava o custo de uma transportadora aplicado à rodovias,
+             com base em serem pavimentadas ou não</p>
+             <p>Conta com:
+             <ul>
+               <li>Token de Autenticação</li>
+               <li>Sistema de login</li>
+               <li>Envio de E-mails</li>
+               <li>Gerência de Contas</li>
+               <li>Análise de Custo</li>
+               <li>Sistema de Log</li>
+             </ul>
+           </p>
+            <h5><a href='https://github.com/marlon-bento/api-rest-springboot'>Repositório</a></h5> 
+            ",
+        ]);
+        \App\Models\Produto::create([
+            "name" => "Portal de Filmes Bentomovies",
+            "thumburl" => "proj2.jpeg",
+            "is_completo" => "1",
+            "description" => "Website de um portal de filmes de animação com acesso a API do themoviedb",
+            "techs" => "Javascript, HTML, CSS, Bootstrap, jQuery",
+            "start_date" => "2020-08-02",
+            "body" => "
+            <p>Desenvolvido por Márlon Bento, é um portal de filmes, que lista filmes
+            obtidos da API do themoviedb</p>
+            <h5>Demonstração: </h5>
+            <a href='https://github.com/marlon-bento/portal-de-filmes' style='text-decoration: none'> 
+            Repositório
+            </a>
+            ",
+        ]);
+        \App\Models\Produto::create([
+            "name" => "Bentrilist",
+            "thumburl" => "projbentrilist.PNG",
+            "is_completo" => "0",
+            "description" => "Website de listagem de capítulos de qualquer coisa",
+            "techs" => "PHP, Javascript, HTML, CSS, Alpine.js",
+            "start_date" => "2023-01-01",
+            "body" => "
+            <p>É um website para listar seus capítulos de livros, mangás ou episódios de qualquer coisa!</p>
+            <p>Conta com:
+              <ul>
+                <li>Comentarios e reviews de cada item</li>
+                <li>Sistema de login para postar</li>
+                <li>Divisão em Categorias</li>
+                <li>Sistema de pesquisa que incorpora categorias</li>
+              </ul>
+            </p>
+            <h5><a href='https://github.com/GabrielHenB/bentrilist'>Repositório</a> </h5> 
+            ",
+        ]);
+        \App\Models\Produto::create([
+            "name" => "Labirinto C#",
+            "thumburl" => "#",
+            "is_completo" => "1",
+            "description" => "Jogo de labirinto desenvolvido em C# para praticar programação",
+            "techs" => "C#",
+            "start_date" => "2019-03-10",
+            "body" => "
+            <p>Joguinho de resolver um labirinto, desenvolvido como parte de uma disciplina na faculdade.</p>
+            <h5><a href='https://github.com/GabrielHenB/csharp-labyrinth-code-test'>Repositório</a> </h5> 
+            ",
+        ]);
+        \App\Models\Produto::create([
+            "name" => "Arquivo Mestre",
+            "thumburl" => "#",
+            "is_completo" => "1",
+            "description" => "Um poderoso código para manipulação de arquivos",
+            "techs" => "Java",
+            "start_date" => "2020-08-10",
+            "body" => "
+            <p>O Arquivo Mestre é um código para manipulação de arquivos, inicialmente em Java, parte
+            de um projeto de Hash Extensível.</p>
+            <h5><a href='https://github.com/marlon-bento/tabela-hash-extensivel'>Repositório</a> </h5> 
+            ",
+        ]);
+        
     }
 }
