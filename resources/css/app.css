@@ -122,3 +122,13 @@ main {
 }
 
 /* FIM DO SHOW.BLADE.PHP */
+.image-container {
+    max-width: 900px;
+    max-height: 400px;
+  }
+
+  .image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
