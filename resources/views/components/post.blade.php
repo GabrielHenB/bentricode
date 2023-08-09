@@ -23,7 +23,7 @@
             <h6 class="card-subtitle muted "><span class='autor'>Por {{ $item->author->name }} </span></h6>
             <h6 class="card-subtitle mb-2 muted">
                 <span class='criado-em'>
-                    Há {{ $item->created_at->diffForHumans() }}
+                    Há {{ $item->created_at->locale('pt')->diffForHumans() }}
                 </span>
             </h6>
             <p class="card-text">

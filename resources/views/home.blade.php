@@ -78,7 +78,7 @@
 
         </div>
         <div class="col-12 col-md-4">
-            <img class="img-fluid rounded border-3  " style="" src="marlon.jpg" alt="">
+            <img class="img-fluid rounded border-3  " style="" src="{{asset('marlon.jpg')}}" alt="">
         </div>
     </div>
     <div class='row introduction-marlon text-dark align-items-center p-3'>
@@ -103,7 +103,7 @@
 
         </div>
         <div class="col-12 col-md-4">
-            <img class="img-fluid rounded border-3  " style="" src="ga.jpg" alt="Something Useless">
+            <img class="img-fluid rounded border-3  " style="" src="{{asset('ga.jpg')}}" alt="Something Useless">
         </div>
     </div>
 </div>

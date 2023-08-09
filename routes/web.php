@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\ProdutoController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -25,6 +26,7 @@ Route::get('/', function () {
 
 //Cria ja endpoints CRUD-like
 Route::resource('posts',PostController::class);
+Route::resource('projetos', ProdutoController::class);
 
 Route::get('search', function (\Illuminate\Http\Request $request) {
     //dd($request);
