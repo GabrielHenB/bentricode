@@ -4,34 +4,38 @@
 
 @section('adicional')
     Bentriprojetos
-@endsection  
+@endsection
 
 {{-- SECAO DO CONTEUDO --}}
 
 @section('content')
-<div class='col-lg-9 col-md-12 conteudo'>
-    <div class='container'>
-        <div class='row'>
-            <h2 class='col-12 center'>Nossos Projetos</h2>
-        </div>
-        <div class="conteiner">
-            <div class="row cards-posts">
-                
-                @foreach($produtos as $item)
-                    <x-product :item="$item" />
-                @endforeach
+    <div class='col-lg-9 col-md-12 conteudo'>
+        <div class='container'>
+            <div class='row'>
+                <h2 class='col-12 center'>Nossos Projetos</h2>
             </div>
-            <div class="row pagination">
-                {{$produtos->links()}}
+            <div class="conteiner">
+                <div class="row cards-posts">
+
+                </div>
+
+            </div>
+            <div class="conteiner">
+                <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3">
+                    <!-- Exemplo de uso de componentes blade. Eles sempre tem o <x-(namespace.componente)> -->
+                    @foreach ($produtos as $item)
+                        <x-product :item="$item" />
+                    @endforeach
+                </div>
+                <div class="d-flex justify-content-center">
+                        {{ $produtos->links() }}
+
+                </div>
             </div>
         </div>
-        
-    </div>
-</div>
-@endsection
+    @endsection
 
-{{-- SECAO DA BARRA LATERAL DIREITA --}}
+    {{-- SECAO DA BARRA LATERAL DIREITA --}}
 
-@section('sidebar')
-            
-@endsection
+    @section('sidebar')
+    @endsection
