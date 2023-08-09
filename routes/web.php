@@ -50,3 +50,15 @@ Route::get('aboutus', function () {
 })->name('aboutus');
 // ================ ROTAS DE SESSAO E AUTH =============
 
+//  =============== ROTAS ADMIN ========================
+// TODO: agrupar rotas em um mesmo middleware admin
+
+Route::get('dashboard', function () {
+    //Por enquanto POSTS apenas para testar, depois mais
+
+    return view('admin.dashboard', 
+    [
+        'posts' => \App\Models\Post::all(),
+        'produtos' => \App\Models\Produto::all()
+]);
+})->name('dashboard');

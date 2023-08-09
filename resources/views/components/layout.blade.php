@@ -41,7 +41,9 @@
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Admin</a>
+                            
+                            <!-- <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">Admin</a> -->
+                            <a href="{{ route('dashboard') }}" class="nav-link">Admin</a>
                         </li>
                     </ul>
 
