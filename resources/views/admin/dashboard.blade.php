@@ -30,11 +30,13 @@
                 <td> {{$produto->created_at}} </td>
                 <td> {{$produto->updated_at}} </td>
                 <td>
-                    <button type="button" class="btn btn-primary">Editar</button>
-                    <button type="button" class="btn btn-danger">Remover</button>
+                    <button type="button"  class="btn btn-primary">Editar</button>
+                    <button type="button" class="btn btn-danger btn-remover">Remover</button>
                 </td>
             </tr>
         @endforeach
+        <a href="{{route('posts.create')}}">Adicionar Novo Projeto</a>
+        {{$produtos->links()}}
         @else
         @foreach($posts as $post)
             <tr>
@@ -49,6 +51,8 @@
                 </td>
             </tr>
         @endforeach
+        <a href="{{route('posts.create')}}">Adicionar Novo Post</a>
+        {{$posts->links()}}
         @endif
     </tbody>
 </table>

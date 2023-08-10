@@ -20,7 +20,7 @@
                 </div>
 
             </div>
-            <div class="conteiner">
+            <div class="container">
                 <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3">
                     <!-- Exemplo de uso de componentes blade. Eles sempre tem o <x-(namespace.componente)> -->
                     @foreach ($produtos as $item)

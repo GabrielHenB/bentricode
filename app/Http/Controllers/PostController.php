@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Post;
 
 class PostController extends Controller
 {
@@ -20,7 +21,7 @@ class PostController extends Controller
      */
     public function create()
     {
-        // TODO
+        return view('posts.create');
     }
 
     /**
@@ -28,7 +29,32 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        // TODO
+        //Obter request
+        //ja vem como parametro kk
+        //Sanitizar request
+        foreach($request->all() as $key=>$value){
+            $request[$key] = filter_var($value, FILTER_SANITIZE_SPECIAL_CHARS);
+        }
+        //$request['user_id'] = auth()->user()->id;
+        $request['user_id'] = $request->input('user_id'); //tambem temporario
+        //Validar request
+        $request->validate([
+            'title' => 'required',
+            'body' => 'string',
+            'thumburl' => 'image',
+            'user_id' => [\Illuminate\Validation\Rule::exists('users','id')]
+        ]);
+        //Criar
+        $request['thumburl'] = '#';
+        
+        Post::create([
+            'user_id' => $request->input('user_id'),
+            'title' => $request->input('title'),
+            'body' => $request->input('body'),
+            'thumburl' => '#', //temporariamente
+        ]);
+
+        return redirect('/')->with('mensagem', "Post efetuado com sucesso!");
     }
 
     /**

@@ -58,7 +58,7 @@ Route::get('dashboard', function () {
 
     return view('admin.dashboard', 
     [
-        'posts' => \App\Models\Post::all(),
-        'produtos' => \App\Models\Produto::all()
+        'posts' => \App\Models\Post::paginate(8),
+        'produtos' => \App\Models\Produto::paginate(8)
 ]);
 })->name('dashboard');

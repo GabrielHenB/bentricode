@@ -139,3 +139,18 @@ main {
     color: black;
 }
 /* FIM PROJETOS */
+
+/* FORMULARIOS */
+
+.form-wrapper{
+    background-color: whitesmoke;
+    color:rgb(22, 22, 22);
+    border-radius: 5px;
+    margin: 10px;
+    padding: 4px;
+}
+
+/* PAGINADOR COISA */
+.texto-paginador{
+    color: white;
+}

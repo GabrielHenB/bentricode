@@ -48,11 +48,11 @@
                     </ul>
 
                 </div>
-                <form class="d-flex" method="GET"
+                <form class="d-flex form-pesquisar" method="GET"
                 action="{{ route('search') }}?squery={{ htmlspecialchars(strip_tags(request('squery'))) }}">
-                <input class="form-control me-2" type="search" name="squery"
+                <input class="form-control me-2 input-pesquisa" type="search" name="squery"
                     placeholder="{{ request('squery') ?? 'Pesquisar' }}" aria-label="Search">
-                <button class="btn btn-outline-success" type="submit">Pesquisar</button>
+                <button class="btn btn-outline-success btn-pesquisa" type="submit">Pesquisar</button>
                 </form>
                 <div class="d-flex align-items-center ms-2 ">
                     <div class="dropdown">
@@ -74,6 +74,10 @@
         </nav>
     </header>
     <!-- Header final -->
+
+    <!-- Mensagens Flash (aparece so se existir na session) -->
+    <x-mensagem />
+    <!-- Fim Mensagens -->
 
 
     <!-- Conteudo inicio -->
