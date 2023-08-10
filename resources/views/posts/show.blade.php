@@ -20,14 +20,14 @@
                         title="Título da fonte">{{ $item->author->name }}</cite></div>
                 <div class="">
                     <!-- Post categories-->
-                    <a class="badge bg-secondary text-decoration-none link-light" href="#!">Web Design</a>
-                    <a class="badge bg-secondary text-decoration-none link-light" href="#!">Freebies</a>
+                    <a class="badge bg-secondary text-decoration-none link-light" href="#!">post</a>
+                    <a class="badge bg-secondary text-decoration-none link-light" href="#!">Bentricode</a>
                 </div>
 
                 <!-- colocar somente imagens de 900x400 pixel-->
                 <div class="row mb-2">
                     <div class="image-container">
-                        <img class="rounded"
+                        <img class="rounded "
                             src="{{ $item->thumburl != '#' ? asset($item->thumburl) : asset('placeholder.png') }}"
                             alt="..." />
                     </div>
