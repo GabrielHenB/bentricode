@@ -32,7 +32,7 @@
                     @foreach ($produtos as $produto)
                         <tr>
                             <th scope="row">{{ $loop->iteration }}</th>
-                            <td> {{ $produto->name }} </td>
+                            <td> <a href="{{route('projetos.show',$produto->id)}}">{{ $produto->name }}</a> </td>
                             <td> {{ $produto->techs }} </td>
                             <td> {{ $produto->created_at }} </td>
                             <td> {{ $produto->updated_at }} </td>
@@ -62,13 +62,13 @@
                     @foreach ($posts as $post)
                         <tr>
                             <th scope="row">{{ $loop->iteration }}</th>
-                            <td> {{ $post->title }} </td>
+                            <td> <a href="{{route('posts.show',$post->id)}}">{{ $post->title }}</a> </td>
                             <td> {{ $post->author->name }} </td>
                             <td> {{ $post->created_at }} </td>
                             <td> {{ $post->updated_at }} </td>
                             <td>
                                 <button type="button" class="btn btn-primary">Editar</button>
-                                <button type="button" class="btn btn-danger">Remover</button>
+                                <button type="button" class="btn btn-danger btn-remover">Remover</button>
                             </td>
                         </tr>
                     @endforeach

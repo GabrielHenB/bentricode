@@ -49,7 +49,18 @@ Route::get('aboutus', function () {
     return view('aboutus');
 })->name('aboutus');
 // ================ ROTAS DE SESSAO E AUTH =============
-
+// TODO: UserController
+Route::get('register', function () {
+    return view('logon.register');
+});
+Route::get('login', function () {
+    return view('logon.login');
+});
+Route::post('login', function () {
+    dd(request()->all());
+    return "Essa função não existe ainda meu nobre";
+});
+Route::post('create', fn()=>"Essa função ainda não existe meu consagrado!" );
 //  =============== ROTAS ADMIN ========================
 // TODO: agrupar rotas em um mesmo middleware admin
 

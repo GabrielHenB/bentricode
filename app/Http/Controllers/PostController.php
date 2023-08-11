@@ -37,6 +37,7 @@ class PostController extends Controller
         }
         //$request['user_id'] = auth()->user()->id;
         $request['user_id'] = $request->input('user_id'); //tambem temporario
+
         //Validar request
         $request->validate([
             'title' => 'required',
@@ -44,14 +45,26 @@ class PostController extends Controller
             'thumburl' => 'image',
             'user_id' => [\Illuminate\Validation\Rule::exists('users','id')]
         ]);
+
+        //Files
+        if($request->hasFile('thumburl')){
+            //treat
+            //TODO file sanitization?
+            //store in public/post_thumbs uses disk from config
+            $filepath = $request->file('thumburl')->store('public/post_thumbs');
+            //dd($filepath);
+        }else{
+            $filepath = '#'; //placeholder
+        }
+
         //Criar
-        $request['thumburl'] = '#';
+        
         
         Post::create([
             'user_id' => $request->input('user_id'),
             'title' => $request->input('title'),
             'body' => $request->input('body'),
-            'thumburl' => '#', //temporariamente
+            'thumburl' => $filepath,
         ]);
 
         return redirect('/')->with('mensagem', "Post efetuado com sucesso!");
@@ -76,6 +89,8 @@ class PostController extends Controller
     public function edit(string $id)
     {
         // TODO
+
+        return view('posts.edit', ['post' => \App\Models\Post::findOrFail($id)]);
     }
 
     /**
@@ -84,6 +99,8 @@ class PostController extends Controller
     public function update(Request $request, string $id)
     {
         // TODO
+        dd($request);
+        return null;
     }
 
     /**

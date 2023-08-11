@@ -66,7 +66,11 @@
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
-                            <li><a class="dropdown-item" style="color: darkred;" href="#">Sair</a></li>
+                            @unless(auth())
+                            <li><a class="dropdown-item" style="color: darkred;" href="logout">Sair</a></li>
+                            @else
+                            <li><a href="login" class="dropdown-item">Entre na sua Conta</a>
+                            @endunless
                         </ul>
                     </div>
                 </div>
@@ -105,7 +109,7 @@
                         Azevedo e Gabriel Henrique</p>
                 </div>
                 <div class="col-6 d-flex justify-content-center">
-                    <img class="img-fluid" id="logo" src="logo.png">
+                    <img class="img-fluid" id="logo" src="{{asset('logo.png')}}">
                 </div>
             </div>
         </div>

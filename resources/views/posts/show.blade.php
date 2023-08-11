@@ -16,7 +16,7 @@
                 <!-- Post title-->
                 <h1 class="fw-bolder mb-1">{{ $item->title }}</h1>
                 <!-- Post meta content-->
-                <div class="text-muted fst-italic mb-2"> Post: {{ $item->created_at->diffForHumans() }} by <cite
+                <div class="text-muted fst-italic mb-2"> Post: {{ $item->created_at->locale('pt')->diffForHumans() }} by <cite
                         title="Título da fonte">{{ $item->author->name }}</cite></div>
                 <div class="">
                     <!-- Post categories-->
@@ -28,7 +28,7 @@
                 <div class="row mb-2">
                     <div class="image-container">
                         <img class="rounded "
-                            src="{{ $item->thumburl != '#' ? asset($item->thumburl) : asset('placeholder.png') }}"
+                            src="{{ $item->thumburl != '#' ? asset('storage/'. Str::after($item->thumburl,'public/')) : asset('placeholder.png') }}"
                             alt="..." />
                     </div>
                 </div>
@@ -56,17 +56,14 @@
                                 src="https://dummyimage.com/50x50/ced4da/6c757d.jpg" alt="..." /></div>
                         <div class="ms-3">
                             <div class="fw-bold">Commenter Name</div>
-                            If you're going to lead a space frontier, it has to be government; it'll never be private
-                            enterprise. Because the space frontier is dangerous, and it's expensive, and it has unquantified
-                            risks.
+                            Gostei disso ai em achei valido e legal
                             <!-- Child comment 1-->
                             <div class="d-flex mt-4">
                                 <div class="flex-shrink-0"><img class="rounded-circle"
                                         src="https://dummyimage.com/50x50/ced4da/6c757d.jpg" alt="..." /></div>
                                 <div class="ms-3">
                                     <div class="fw-bold">Commenter Name</div>
-                                    And under those conditions, you cannot establish a capital-market evaluation of that
-                                    enterprise. You can't get investors.
+                                    Mas eu não achei nem valido e muito menos legal
                                 </div>
                             </div>
                             <!-- Child comment 2-->
@@ -75,7 +72,7 @@
                                         src="https://dummyimage.com/50x50/ced4da/6c757d.jpg" alt="..." /></div>
                                 <div class="ms-3">
                                     <div class="fw-bold">Commenter Name</div>
-                                    When you put money directly to a problem, it makes a good headline.
+                                    Ngm liga kkkj seu lixo
                                 </div>
                             </div>
                         </div>
