@@ -15,8 +15,8 @@
     <div class='row introduction-bentricode text-dark align-items-center p-3'>
         
     </div>
-    <div class='row'>
-        <h2 class="col-12">Bentricode: Inovação e Excelência em Soluções de Software</h2>
+    <div class='row text-bg-light'>
+        <h2 class="col-12 text-center">Bentricode: Inovação e Excelência em Soluções de Software</h2>
         <p class="col-12">
 
             <p>Bem-vindo ao mundo da Bentricode, uma empresa de software
@@ -57,7 +57,7 @@
 
 
     </div>
-    <div class='row introduction-marlon text-dark align-items-center p-3'>
+    <div class='row introduction-marlon text-dark align-items-center p-3  border-bottom border-dark border-3 border-opacity-50'>
         <div class="col-12 col-md-8">
             <blockquote class="blockquote  ">
                 <p class="display-6">Márlon Bento Azevedo</p>
@@ -78,9 +78,10 @@
 
         </div>
         <div class="col-12 col-md-4">
-            <img class="img-fluid rounded border-3  " style="" src="{{asset('marlon.jpg')}}" alt="">
+            <img class="img-fluid rounded border-3  shadow" style="" src="{{asset('marlon.jpg')}}" alt="">
         </div>
     </div>
+
     <div class='row introduction-marlon text-dark align-items-center p-3'>
         <div class="col-12 col-md-8">
             <blockquote class="blockquote  ">
@@ -103,7 +104,7 @@
 
         </div>
         <div class="col-12 col-md-4">
-            <img class="img-fluid rounded border-3  " style="" src="{{asset('ga.jpg')}}" alt="Something Useless">
+            <img class="img-fluid rounded border-3  shadow" style="" src="{{asset('ga.jpg')}}" alt="Something Useless">
         </div>
     </div>
 </div>

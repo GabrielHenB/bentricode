@@ -19,59 +19,72 @@
 <body>
     <!-- Header inicio -->
     <!-- Isso depois pode ser extraido para um Blade component -->
-    <header class="">
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="{{ route('home') }}">Bentri<span style="color:#782FB7;">Code</span></a>
-                <button class="navbar-toggler botao-menu" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon "></span>
-                </button>
-                <div class=" navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="{{ route('home') }}">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('posts.index') }}">Posts</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('projetos.index') }}">Projetos</a>
-                        </li>
+    <header class="bg-dark">
 
-                        <li class="nav-item">
-                            
-                            <!-- <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">Admin</a> -->
-                            <a href="{{ route('dashboard') }}" class="nav-link">Admin</a>
-                        </li>
-                    </ul>
+        <div class="container">
+            <nav class="bg-dark row navbar navbar-expand-lg navbar-dark">
+                <div class="col-2 col-sm-1 d-block d-lg-none order-0 me-sm-3" style="">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+                <div class="col col-lg-2 text-light order-1">
+                    <a class="navbar-brand" href="{{ route('home') }}">Bentri<span
+                            style="color:#782FB7;">Code</span></a>
+                </div>
+                <div class="col-12 col-lg order-3 order-lg-2">
+
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="{{ route('home') }}">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('posts.index') }}">Posts</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('projetos.index') }}">Projetos</a>
+                            </li>
+
+                            <li class="nav-item">
+
+                                <!-- <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">Admin</a> -->
+                                <a href="{{ route('dashboard') }}" class="nav-link">Admin</a>
+                            </li>
+                        </ul>
+                        <form class="d-flex">
+                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                            <button class="btn btn-outline-success" type="submit">Search</button>
+                        </form>
+                    </div>
 
                 </div>
-                <form class="d-flex form-pesquisar" method="GET"
-                action="{{ route('search') }}?squery={{ htmlspecialchars(strip_tags(request('squery'))) }}">
-                <input class="form-control me-2 input-pesquisa" type="search" name="squery"
-                    placeholder="{{ request('squery') ?? 'Pesquisar' }}" aria-label="Search">
-                <button class="btn btn-outline-success btn-pesquisa" type="submit">Pesquisar</button>
-                </form>
-                <div class="d-flex align-items-center ms-2 ">
-                    <div class="dropdown">
-                        <button class="btn text-light dropdown-toggle border-0" type="button" id="dropdownMenuButton"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            Visitante
-                        </button>
-                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
-                            <li><a class="dropdown-item" href="#">Carrinho</a></li>
-                            <li><a class="dropdown-item" href="#">Informações</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" style="color: darkred;" href="#">Sair</a></li>
-                        </ul>
+                <div class="col-2  order-2 order-lg-3 ">
+                    <div class="d-flex justify-content-end">
+                        <div class="dropdown">
+                            <button class="btn text-light dropdown-toggle border-0" type="button"
+                                id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                                Visitante
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
+                                <li><a class="dropdown-item" href="#">Carrinho</a></li>
+                                <li><a class="dropdown-item" href="#">Informações</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" style="color: darkred;" href="#">Sair</a></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </nav>
+
+
+            </nav>
+        </div>
+
+
     </header>
     <!-- Header final -->
 
