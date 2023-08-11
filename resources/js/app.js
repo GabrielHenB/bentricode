@@ -27,3 +27,7 @@ document.getElementById('fechar').addEventListener('click', function () {
 })
 
 //TODO botao avisar remover antes
+document.querySelector('.btn-remover').addEventListener('click', function (evento) {
+    evento.preventDefault();
+    alert('Função ainda não implementada!');
+});

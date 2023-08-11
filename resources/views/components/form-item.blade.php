@@ -1,4 +1,4 @@
-@props(['name','type' => 'text','tamanho' => '' ,'placeholder' => ''])
+@props(['name','type' => 'text','value' => '','tamanho' => '' ,'placeholder' => ''])
 
 <div class="form-group">
     <label for="input{{$name}}">{{($type == 'file') ? "Thumbnail" : ucwords($name)}}:</label>
@@ -8,6 +8,7 @@
         {{$attributes->merge(['class' => ($type == 'file') ? 'form-control-file' : 'form-control '.$tamanho])}}
         id="input{{$name}}"
         aria-describedby="{{$type}}Help" placeholder="{{$placeholder}}"
+        value="{{$value}}"
         { {$attributes }} {{-- O $attributes sao quaisquer atributos passados para o componente Blade --}}
         >
         @if($type == 'email')
@@ -16,7 +17,7 @@
             </small>
         @endif
     @else
-        <textarea class="form-control" name="{{$name}}" id="FormControl{{$name}}" {{$attributes->merge(['rows' => $tamanho])}}></textarea>
+        <textarea class="form-control" name="{{$name}}" id="FormControl{{$name}}" {{$attributes->merge(['rows' => $tamanho])}}>{{$value}}</textarea>
         <small class="form-text text-muted">
             Este campo aceita tags HTML
         </small>

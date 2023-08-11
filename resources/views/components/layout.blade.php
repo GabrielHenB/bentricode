@@ -64,18 +64,22 @@
                 <div class="col-2  order-2 order-lg-3 ">
                     <div class="d-flex justify-content-end">
                         <div class="dropdown">
-                            <button class="btn text-light dropdown-toggle border-0" type="button"
-                                id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
-                                Visitante
-                            </button>
-                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
-                                <li><a class="dropdown-item" href="#">Carrinho</a></li>
-                                <li><a class="dropdown-item" href="#">Informações</a></li>
-                                <li>
-                                    <hr class="dropdown-divider">
-                                </li>
-                                <li><a class="dropdown-item" style="color: darkred;" href="#">Sair</a></li>
-                            </ul>
+                            <button class="btn text-light dropdown-toggle border-0" type="button" id="dropdownMenuButton"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Visitante
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
+                            <li><a class="dropdown-item" href="#">Carrinho</a></li>
+                            <li><a class="dropdown-item" href="#">Informações</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            @unless(auth())
+                            <li><a class="dropdown-item" style="color: darkred;" href="logout">Sair</a></li>
+                            @else
+                            <li><a href="login" class="dropdown-item">Entre na sua Conta</a>
+                            @endunless
+                        </ul>
                         </div>
                     </div>
                 </div>
@@ -118,7 +122,7 @@
                         Azevedo e Gabriel Henrique</p>
                 </div>
                 <div class="col-6 d-flex justify-content-center">
-                    <img class="img-fluid" id="logo" src="logo.png">
+                    <img class="img-fluid" id="logo" src="{{asset('logo.png')}}">
                 </div>
             </div>
         </div>
