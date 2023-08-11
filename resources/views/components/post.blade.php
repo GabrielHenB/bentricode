@@ -27,7 +27,7 @@
                 </span>
             </h6>
             <p class="card-text">
-                {!! $item->body !!}
+                {{ $item->body }}
             </p>
 
 

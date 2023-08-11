@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Post;
+use Illuminate\Http\RedirectResponse;
 
 class PostController extends Controller
 {
@@ -27,19 +28,25 @@ class PostController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(Request $request): RedirectResponse
     {
         //Obter request
         //ja vem como parametro kk
         //Sanitizar request
         foreach($request->all() as $key=>$value){
-            $request[$key] = filter_var($value, FILTER_SANITIZE_SPECIAL_CHARS);
+            if($key == "body"){
+                //Por enquanto nao filtra, ja que só ADMINs podem postar!!
+                //Inseguro se qualquer um puder postar
+            }else{
+                $request[$key] = filter_var($value, FILTER_SANITIZE_SPECIAL_CHARS);
+            }
+            
         }
         //$request['user_id'] = auth()->user()->id;
         $request['user_id'] = $request->input('user_id'); //tambem temporario
 
         //Validar request
-        $request->validate([
+        $entrada = $request->validate([
             'title' => 'required',
             'body' => 'string',
             'thumburl' => 'image',
@@ -58,14 +65,7 @@ class PostController extends Controller
         }
 
         //Criar
-        
-        
-        Post::create([
-            'user_id' => $request->input('user_id'),
-            'title' => $request->input('title'),
-            'body' => $request->input('body'),
-            'thumburl' => $filepath,
-        ]);
+        Post::create(array_merge($entrada, ['thumburl' => $filepath]));
 
         return redirect('/')->with('mensagem', "Post efetuado com sucesso!");
     }

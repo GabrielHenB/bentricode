@@ -65,7 +65,7 @@ Route::post('create', fn()=>"Essa função ainda não existe meu consagrado!" );
 // TODO: agrupar rotas em um mesmo middleware admin
 
 Route::get('dashboard', function () {
-    //Por enquanto POSTS apenas para testar, depois mais
+    
 
     return view('admin.dashboard', 
     [
