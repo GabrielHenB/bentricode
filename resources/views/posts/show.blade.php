@@ -47,7 +47,7 @@
                 <div class="card-body">
                     <!-- Comment form-->
                     <form class="mb-4">
-                        <textarea class="form-control" rows="3" placeholder="Join the discussion and leave a comment!"></textarea>
+                        <textarea class="form-control" rows="3" placeholder="Participe da conversa com seu comentário!"></textarea>
                     </form>
                     <!-- Comment with nested comments-->
                     <div class="d-flex mb-4">
@@ -83,8 +83,8 @@
                                 src="https://dummyimage.com/50x50/ced4da/6c757d.jpg" alt="..." /></div>
                         <div class="ms-3">
                             <div class="fw-bold">Commenter Name</div>
-                            When I look at the universe and all the ways the universe wants to kill us, I find it hard to
-                            reconcile that with statements of beneficence.
+                            Já pararam pra pensar que o verdadeiro sentido da jornada não é o destino final,
+                            mas sim os amigos que foram feitos pelo caminho??
                         </div>
                     </div>
                 </div>

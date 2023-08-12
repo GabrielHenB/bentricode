@@ -38,7 +38,11 @@
                             <td> {{ $produto->updated_at }} </td>
                             <td>
                                 <button type="button" class="btn btn-primary">Editar</button>
-                                <button type="button" class="btn btn-danger btn-remover">Remover</button>
+                                <form class="dashboard-remove" action='{{route('projetos.destroy', $produto->id)}}' method='POST'>
+                                    {{csrf_field()}}
+                                    @method('DELETE')
+                                <button type="submit" class="btn btn-danger btn-remover">Remover</button>
+                                </form>
                             </td>
                         </tr>
                     @endforeach
@@ -68,7 +72,11 @@
                             <td> {{ $post->updated_at }} </td>
                             <td>
                                 <button type="button" class="btn btn-primary">Editar</button>
-                                <button type="button" class="btn btn-danger btn-remover">Remover</button>
+                                <form class="dashboard-remove" action='{{route('posts.destroy', $post->id)}}' method='POST'>
+                                    {{ csrf_field() }}
+                                    @method('DELETE')
+                                    <button type="submit" class="btn btn-danger btn-remover">Remover</button>
+                                </form>
                             </td>
                         </tr>
                     @endforeach
@@ -80,9 +88,7 @@
 
                         </div>
                         <div class="col ms-auto d-flex justify-content-end">
-
                             <a class=" btn btn-success" href="{{ route('posts.create') }}">Adicionar Novo Post</a>
-
                         </div>
                     </div>
 
@@ -91,8 +97,6 @@
             </tbody>
         </table>
     </div>
-
-
 
 
 

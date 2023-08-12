@@ -67,7 +67,7 @@ class PostController extends Controller
         //Criar
         Post::create(array_merge($entrada, ['thumburl' => $filepath]));
 
-        return redirect('/')->with('mensagem', "Post efetuado com sucesso!");
+        return redirect(route('dashboard'))->with('mensagem', "Post efetuado com sucesso!");
     }
 
     /**
@@ -108,6 +108,11 @@ class PostController extends Controller
      */
     public function destroy(string $id)
     {
-        // TODO
+        //TODO: verificar se o usuario tem essa permissao ou usar middleware
+        $post = Post::findOrFail($id);
+        //dd($post);
+        $post->delete();
+
+        return redirect(route('home'))->with('mensagem', 'Post deletado com sucesso!');
     }
 }
