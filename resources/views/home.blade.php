@@ -57,6 +57,34 @@
 
 
     </div>
+    <div class="row text-bg-light text-center">
+        <div class="col-12">
+            <h1>Redes sociais:</h1>
+        </div>
+        <a href="#" class="col m-2 btn btn-info text-light fs-4 fw-bold "> 
+            <div class="row">
+                <i class="col-12 col-md-1 bi bi-facebook"></i> 
+                <span class="col-12 col-md">Facebook</span>
+            </div>
+
+        </a>
+        <a href="#" class="col m-2 btn btn-danger text-light fs-4 fw-bold"> 
+            <div class="row">
+                <i class="col-12 col-md-1 bi bi-instagram "></i> 
+                <span class="col-12 col-md ">Instagram</span>
+            </div>
+
+
+        </a>
+        <a href="#" class="col m-2 btn btn-success text-light fs-4 fw-bold"> 
+            <div class="row">
+                <i class="col-12 col-md-1 bi bi-whatsapp"></i> 
+                <span class="col-12 col-md">Whatsapp</span>
+            </div>
+      
+        </a>
+        
+    </div>
     <div class='row introduction-marlon text-dark align-items-center p-3  border-bottom border-dark border-3 border-opacity-50'>
         <div class="col-12 col-md-8">
             <blockquote class="blockquote  ">

@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Bentricode Services @yield('adicional')</title>
     <link rel="icon" href="{{ asset('bentricon.ico') }}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     {{-- <link rel='stylesheet' src='{{asset('shared/app.css')}}'> --}}
     {{-- O vite carrega e constroi as dependencias --}}
     @vite(['resources/css/app.css', 'resources/js/app.js'])
@@ -64,22 +65,34 @@
                 <div class="col-2  order-2 order-lg-3 ">
                     <div class="d-flex justify-content-end">
                         <div class="dropdown">
-                            <button class="btn text-light dropdown-toggle border-0" type="button" id="dropdownMenuButton"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            Visitante
-                        </button>
-                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
-                            <li><a class="dropdown-item" href="#">Carrinho</a></li>
-                            <li><a class="dropdown-item" href="#">Informações</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            @unless(auth())
-                            <li><a class="dropdown-item" style="color: darkred;" href="logout">Sair</a></li>
-                            @else
-                            <li><a href="login" class="dropdown-item">Entre na sua Conta</a>
-                            @endunless
-                        </ul>
+                            <button class="btn text-light dropdown-toggle border-0 d-flex align-items-center " type="button"
+                                id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                                <span class="me-2">Visitante</span>
+                                <i class="bi bi-person-circle fs-3"></i>
+
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
+                                <li class="d-flex align-items-center me-2">
+                                    <a class="dropdown-item" href="#">Carrinho </a>
+                                    <i class="bi bi-cart-dash"></i>
+                                </li>
+                                <li class="d-flex align-items-center me-2">
+                                    <a class="dropdown-item" href="#">Informações </a>
+                                    <i class="bi bi-info-circle"></i>
+                                </li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                @unless (auth())
+                                    <li><a class="dropdown-item" style="color: darkred;" href="logout">Sair</a></li>
+                                @else
+                                    <li>
+                                       
+                                        <a href="login" class="dropdown-item ">Entre na sua Conta  </a>
+                                       
+                                    </li>
+                                @endunless
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -122,7 +135,7 @@
                         Azevedo e Gabriel Henrique</p>
                 </div>
                 <div class="col-6 d-flex justify-content-center">
-                    <img class="img-fluid" id="logo" src="{{asset('logo.png')}}">
+                    <img class="img-fluid" id="logo" src="{{ asset('logo.png') }}">
                 </div>
             </div>
         </div>
