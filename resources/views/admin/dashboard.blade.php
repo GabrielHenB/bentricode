@@ -37,7 +37,7 @@
                             <td> {{ $produto->created_at }} </td>
                             <td> {{ $produto->updated_at }} </td>
                             <td>
-                                <button type="button" class="btn btn-primary">Editar</button>
+                                <button type="button" onclick="window.location.href='{{route('projetos.edit', $produto->id)}}'" class="btn btn-primary">Editar</button>
                                 <form class="dashboard-remove" action='{{route('projetos.destroy', $produto->id)}}' method='POST'>
                                     {{csrf_field()}}
                                     @method('DELETE')
@@ -55,13 +55,13 @@
                         </div>
                         <div class="col ms-auto d-flex justify-content-end">
 
-                            <a class="btn btn-success" href="{{ route('posts.create') }}">Adicionar Novo Projeto</a>
+                            <a class="btn btn-success" href="{{ route('projetos.create') }}">Adicionar Novo Projeto</a>
 
                         </div>
                     </div>
 
 
-                    {{ $produtos->links() }}
+                    
                 @else
                     @foreach ($posts as $post)
                         <tr>
@@ -71,7 +71,7 @@
                             <td> {{ $post->created_at }} </td>
                             <td> {{ $post->updated_at }} </td>
                             <td>
-                                <button type="button" class="btn btn-primary">Editar</button>
+                                <button type="button" onclick="window.location.href='{{route('posts.edit', $post->id)}}'" class="btn btn-primary">Editar</button>
                                 <form class="dashboard-remove" action='{{route('posts.destroy', $post->id)}}' method='POST'>
                                     {{ csrf_field() }}
                                     @method('DELETE')
@@ -92,8 +92,10 @@
                         </div>
                     </div>
 
-                    {{ $posts->links() }}
+                    
                 @endif
+                {{-- ARRUMAR A PAGINACAO ESTA DANDO BUGS --}}
+                {{request()->input('see') == "projetos" ? $produtos->links() : $posts->links()  }}
             </tbody>
         </table>
     </div>

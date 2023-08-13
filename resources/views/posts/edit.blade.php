@@ -9,14 +9,24 @@
         <div class='row titulo-pagina'>
             <h2 class='col-12 center'>Editar um Post</h2>
         </div>
+
+        <!-- colocar somente imagens de 900x400 pixel-->
+        <div class="row mb-2">
+            <div class="image-container">
+                <img class="rounded "
+                    src="{{ $post->thumburl != '#' ? asset('storage/'. Str::after($post->thumburl,'public/')) : asset('placeholder.png') }}"
+                    alt="Thumbnail Anterior" />
+            </div>
+        </div>
+
         <div class="container form-wrapper">
-            <form action="{{route('posts.store')}}" method="POST" enctype="multipart/form-data">
+            <form action="{{route('posts.update', $post->id)}}" method="POST" enctype="multipart/form-data">
                 @csrf
                 @method('PUT')
                 <x-form-item name='title' placeholder='Titulo do Post' :value="$post->title" />
                 
                 <x-form-item name='body' type='textarea' tamanho='2' :value="$post->body" />
-                <img src="{{$post->thumburl}}" alt="Thumbnail Anterior" />    
+                
                 <x-form-item name='thumburl' type='file' />
                   <button type="submit" class="btn btn-primary">Editar</button>
             </form>
