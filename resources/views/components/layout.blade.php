@@ -49,9 +49,13 @@
                             </li>
 
                             <li class="nav-item">
-
-                                <!-- <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">Admin</a> -->
-                                <a href="{{ route('dashboard') }}" class="nav-link">Admin</a>
+                                @auth
+                                    @if(auth()->user()->isAdmin)
+                                        <a href="{{ route('dashboard') }}" class="nav-link">Admin</a>
+                                    @else
+                                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Admin</a>
+                                    @endif
+                                @endauth
                             </li>
                         </ul>
                         <form method="GET" action="{{route('search')}}?squery={{htmlspecialchars(strip_tags(request('squery')))}}" class="d-flex form-pesquisar">
@@ -66,7 +70,11 @@
                         <div class="dropdown">
                             <button class="btn text-light dropdown-toggle border-0" type="button" id="dropdownMenuButton"
                             data-bs-toggle="dropdown" aria-expanded="false">
-                            Visitante
+                            @guest
+                                Visitante
+                            @else
+                                {{auth()->user()->name}}
+                            @endguest
                         </button>
                         <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
                             <li><a class="dropdown-item" href="#">Carrinho</a></li>
@@ -74,11 +82,11 @@
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
-                            @unless(auth())
-                            <li><a class="dropdown-item" style="color: darkred;" href="logout">Sair</a></li>
+                            @auth
+                            <li><a class="dropdown-item" style="color: darkred;" href="{{url('/logout')}}">Sair</a></li>
                             @else
                             <li><a href="{{url('/login')}}" class="dropdown-item">Entre na sua Conta</a>
-                            @endunless
+                            @endauth
                         </ul>
                         </div>
                     </div>

@@ -34,17 +34,11 @@ Route::get('aboutus', fn()=>view('aboutus'))->name('aboutus');
 
 // ================ ROTAS DE SESSAO E AUTH =============
 
-Route::get('register', function () {
-    return view('logon.register');
-});
-Route::get('login', function () {
-    return view('logon.login');
-});
-Route::post('login', function () {
-    dd(request()->all());
-    return "Essa função não existe ainda meu nobre";
-});
+Route::get('register',[\App\Http\Controllers\UserController::class,"create"]);
+Route::get('login',[\App\Http\Controllers\UserController::class,"index"]);
+Route::post('login',[\App\Http\Controllers\UserController::class,"login"]);
 Route::post('create',[\App\Http\Controllers\UserController::class,"store"]);
+Route::get('logout', [\App\Http\Controllers\UserController::class,"logout"]); //temporario
 
 //  =============== ROTAS ADMIN ========================
 // TODO: agrupar rotas em um mesmo middleware admin
