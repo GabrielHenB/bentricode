@@ -13,8 +13,8 @@
         <div class="container form-wrapper">
             <form action="create" method="POST" enctype="multipart/form-data">
                 @csrf
-                <x-form-item name='email' type='email' placeholder='email@dominio.com' required/>
-                <x-form-item name='name' placeholder='Seu nome' required/>
+                <x-form-item name='email' type='email' placeholder='email@dominio.com' value="{{old('email')}}" required/>
+                <x-form-item name='name' placeholder='Seu nome' value="{{old('name')}}" required/>
                 <x-form-item name='password' type='password' required/>
                 <x-form-item name='avatar' type='file' />
                   <button type="submit" class="btn btn-primary">Criar</button>

@@ -22,34 +22,18 @@ Route::get('/', function () {
     return view('home');
 })->name('home');
 
-//Route::get('/posts', [PostController::class,'index'])->name('posts');
-
 //Cria ja endpoints CRUD-like
 Route::resource('posts',PostController::class);
 Route::resource('projetos', ProdutoController::class);
 
-Route::get('search', function (\Illuminate\Http\Request $request) {
-    //dd($request);
-    //TODO separar em um outro objeto
-    foreach($request->all() as $chave=>$valor){
-        $request[$chave] = filter_var($valor,FILTER_SANITIZE_SPECIAL_CHARS);
-    }
-    if($request['squery'] == ""){
-        $items = new \Illuminate\Support\Collection();
-    }else{
-        $items = \App\Models\Post::where('title','like','%'.$request['squery'].'%')->get();
-    }
-    
-    
-    return view('search', ['items' => $items]);
-})->name('search');
+// PESQUISAR 
+Route::get('search',[\App\Http\Controllers\SearchController::class,"index"])->name('search');
 
-Route::get('aboutus', function () {
+// SOBRE NOS
+Route::get('aboutus', fn()=>view('aboutus'))->name('aboutus');
 
-    return view('aboutus');
-})->name('aboutus');
 // ================ ROTAS DE SESSAO E AUTH =============
-// TODO: UserController
+
 Route::get('register', function () {
     return view('logon.register');
 });
@@ -60,13 +44,12 @@ Route::post('login', function () {
     dd(request()->all());
     return "Essa função não existe ainda meu nobre";
 });
-Route::post('create', fn()=>"Essa função ainda não existe meu consagrado!" );
+Route::post('create',[\App\Http\Controllers\UserController::class,"store"]);
+
 //  =============== ROTAS ADMIN ========================
 // TODO: agrupar rotas em um mesmo middleware admin
 
 Route::get('dashboard', function () {
-    
-
     return view('admin.dashboard', 
     [
         'posts' => \App\Models\Post::paginate(8),

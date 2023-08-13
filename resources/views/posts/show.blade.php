@@ -20,8 +20,8 @@
                         title="Título da fonte">{{ $item->author->name }}</cite></div>
                 <div class="">
                     <!-- Post categories-->
-                    <a class="badge bg-secondary text-decoration-none link-light" href="#!">post</a>
-                    <a class="badge bg-secondary text-decoration-none link-light" href="#!">Bentricode</a>
+                    <a class="badge bg-secondary text-decoration-none link-light" href="{{route('posts.index')}}">Post</a>
+                    <a class="badge bg-secondary text-decoration-none link-light" href="{{route('home')}}">Bentricode</a>
                 </div>
 
                 <!-- colocar somente imagens de 900x400 pixel-->

@@ -54,9 +54,9 @@
                                 <a href="{{ route('dashboard') }}" class="nav-link">Admin</a>
                             </li>
                         </ul>
-                        <form class="d-flex">
-                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                            <button class="btn btn-outline-success" type="submit">Search</button>
+                        <form method="GET" action="{{route('search')}}?squery={{htmlspecialchars(strip_tags(request('squery')))}}" class="d-flex form-pesquisar">
+                            <input name="squery" class="form-control me-2 input-pesquisa" type="search" placeholder="{{request('squery') ?? "..."}}" aria-label="Search">
+                            <button class="btn btn-outline-success btn-pesquisa" type="submit">Search</button>
                         </form>
                     </div>
 
@@ -70,14 +70,14 @@
                         </button>
                         <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
                             <li><a class="dropdown-item" href="#">Carrinho</a></li>
-                            <li><a class="dropdown-item" href="#">Informações</a></li>
+                            <li><a class="dropdown-item" href="teste">Informações</a></li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
                             @unless(auth())
                             <li><a class="dropdown-item" style="color: darkred;" href="logout">Sair</a></li>
                             @else
-                            <li><a href="login" class="dropdown-item">Entre na sua Conta</a>
+                            <li><a href="{{url('/login')}}" class="dropdown-item">Entre na sua Conta</a>
                             @endunless
                         </ul>
                         </div>

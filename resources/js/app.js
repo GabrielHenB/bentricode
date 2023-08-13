@@ -25,9 +25,3 @@ document.querySelector('.form-pesquisar').addEventListener('submit', function (e
 document.getElementById('fechar').addEventListener('click', function () {
     document.getElementById('mensagem-flash').style = "display: none";
 })
-
-//TODO botao avisar remover antes
-document.querySelector('.btn-remover').addEventListener('click', function (evento) {
-    
-    alert('Função ainda não implementada!');
-});
