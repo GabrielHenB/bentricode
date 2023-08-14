@@ -20,8 +20,16 @@ class DatabaseSeeder extends Seeder
         // ]);
 
         
-        \App\Models\User::factory()->create(['name'=>'Gabriel']);
-        \App\Models\User::factory()->create(['name'=>'Marlon']);
+        \App\Models\User::factory()->create([
+            'name'=>'Gabriel',
+             'email' => "gabriel@email.com",
+             'password' => bcrypt("bentriel2023"),
+              'isAdmin' => '1']);
+        \App\Models\User::factory()->create([
+            'name'=>'Marlon',
+             'email' => "marlon@email.com",
+             'password' => bcrypt("bentriel2023"),
+              'isAdmin' => '1']);
         \App\Models\User::factory(2)->create();
         \App\Models\Post::create([
             'user_id' => '1',
@@ -32,7 +40,7 @@ class DatabaseSeeder extends Seeder
              de monitoramento em tempo real da temperatura e sensores <strong>de ponta</strong>, sua
              horta terá um incrível aumento em produtividade e, claro, qualidade.
             ",
-            'thumburl' => 'pl1.jpg',
+            'thumburl' => 'public/post_thumbs/pl1.jpg',
         ]);
         \App\Models\Post::create([
             'user_id' => '1',
@@ -40,7 +48,7 @@ class DatabaseSeeder extends Seeder
             'body' => "É argumentável que VHDL seja programação, mas se você realmente é um adepto do dao
             da descrição, jamais cometeria o equivoco, grave, de chamar VHDL de programação. Não é programação
             é descrição de hardware, não se está programando e sim descrevendo. Não seja burro!!",
-            'thumburl' => 'pl2.jpeg'
+            'thumburl' => 'public/post_thumbs/pl2.jpeg'
         ]);
         \App\Models\Post::create([
             'user_id' => '2',
@@ -48,7 +56,7 @@ class DatabaseSeeder extends Seeder
             'body' => "Já pensou em como melhorar as coisas hoje? Sabia que sempre podemos melhorar as coisas?
             Existem coisas a serem melhoradas e essas coisas são sempre passiveis de melhorias. Então
             lembrem-se, sempre podemos melhorar as coisas.",
-            'thumburl' => 'pl3.gif'
+            'thumburl' => 'public/post_thumbs/pl3.gif'
         ]);
         \App\Models\Post::create([
             'user_id' => '2',
@@ -79,7 +87,7 @@ class DatabaseSeeder extends Seeder
                 10. **Adoção em instituições de pesquisa**: A crescente popularidade em instituições
                 acadêmicas assegura seu constante desenvolvimento e relevância.
             ",
-            'thumburl' => 'pl4.jpeg'
+            'thumburl' => 'public/post_thumbs/pl4.jpeg'
         ]);
         \App\Models\Post::create([
             'user_id' => '1',
@@ -87,7 +95,7 @@ class DatabaseSeeder extends Seeder
             'body' => "Nada como uma bela programação em C. Você só sabe que foi feliz quando percebe a
             tristeza e depressão de ficar 7 dias tentando resolver um erro em C que a IDE não sabe te avisar
             o por que!",
-            'thumburl' => 'pl5.jpg'
+            'thumburl' => 'public/post_thumbs/pl5.jpg'
         ]);
         \App\Models\Post::create([
             'user_id' => '1',
@@ -98,7 +106,7 @@ class DatabaseSeeder extends Seeder
             - Arquivo Mestre: Sempre precisamos mexer com arquivos, mas nunca estamos a fim de implementar,
             o arquivo mestre bentricode resolve seus problemas
             - Megshop: A melhor loja da regiao!",
-            'thumburl' => 'pl6.jpg'
+            'thumburl' => 'public/post_thumbs/pl6.jpg'
         ]);
         \App\Models\Post::create([
             'user_id' => '2',
@@ -106,14 +114,14 @@ class DatabaseSeeder extends Seeder
             'body' => "Durante grande parte da minha experiencia em exatas, sempre fui fascinado pelos numeros
             primos e como não existe um metodo definitivo para encontrar qualquer primo. Acredito que todos
             um dia quisemos encontrar um numero primo, mas nao sabiamos como.",
-            'thumburl' => 'pl7.jpg'
+            'thumburl' => 'public/post_thumbs/pl7.jpg'
         ]);
         \App\Models\Post::create([
             'user_id' => '2',
             'title' => 'O ninja do C#: Um canal de programação',
             'body' => "Já teve vontade de aprender programação com um conteúdo prático e acessível?
             Acesse o canal Ninja do C# no youtube.",
-            'thumburl' => 'pl8.jpg'
+            'thumburl' => 'public/post_thumbs/pl8.jpg'
         ]);
         //\App\Models\Post::factory(2)->create();
         \App\Models\Produto::create([

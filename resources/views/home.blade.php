@@ -134,6 +134,8 @@
         <div class="col-12 col-md-4">
             <img class="img-fluid rounded border-3  shadow" style="" src="{{asset('ga.jpg')}}" alt="Something Useless">
         </div>
+     
+                 
     </div>
 </div>
 </div>

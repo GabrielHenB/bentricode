@@ -41,7 +41,7 @@
                                 <form class="dashboard-remove" action='{{route('projetos.destroy', $produto->id)}}' method='POST'>
                                     {{csrf_field()}}
                                     @method('DELETE')
-                                <button type="submit" class="btn btn-danger btn-remover">Remover</button>
+                                <button type="submit" onclick="return confirm('Tem certeza?')" class="btn btn-danger btn-remover">Remover</button>
                                 </form>
                             </td>
                         </tr>
@@ -75,7 +75,7 @@
                                 <form class="dashboard-remove" action='{{route('posts.destroy', $post->id)}}' method='POST'>
                                     {{ csrf_field() }}
                                     @method('DELETE')
-                                    <button type="submit" class="btn btn-danger btn-remover">Remover</button>
+                                    <button type="submit" onclick="return confirm('Tem certeza?')" class="btn btn-danger btn-remover">Remover</button>
                                 </form>
                             </td>
                         </tr>

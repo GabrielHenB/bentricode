@@ -1,5 +1,4 @@
 @props(['name','type' => 'text','value' => '','tamanho' => '' ,'placeholder' => ''])
-
 <div class="form-group">
     <label for="input{{$name}}">{{($type == 'file') ? "Thumbnail" : ucwords($name)}}:</label>
     @unless($type == 'textarea')

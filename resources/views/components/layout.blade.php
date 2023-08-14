@@ -50,14 +50,18 @@
                             </li>
 
                             <li class="nav-item">
-
-                                <!-- <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">Admin</a> -->
-                                <a href="{{ route('dashboard') }}" class="nav-link">Admin</a>
+                                @auth
+                                    @if(auth()->user()->isAdmin)
+                                        <a href="{{ route('dashboard') }}" class="nav-link">Admin</a>
+                                    @else
+                                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Admin</a>
+                                    @endif
+                                @endauth
                             </li>
                         </ul>
-                        <form class="d-flex">
-                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                            <button class="btn btn-outline-success" type="submit">Search</button>
+                        <form method="GET" action="{{route('search')}}?squery={{htmlspecialchars(strip_tags(request('squery')))}}" class="d-flex form-pesquisar">
+                            <input name="squery" class="form-control me-2 input-pesquisa" type="search" placeholder="{{request('squery') ?? "..."}}" aria-label="Search">
+                            <button class="btn btn-outline-success btn-pesquisa" type="submit">Search</button>
                         </form>
                     </div>
 
@@ -66,33 +70,27 @@
                     <div class="d-flex justify-content-end">
                         <div class="dropdown">
                             <button class="btn text-light dropdown-toggle border-0 d-flex align-items-center " type="button"
-                                id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
-                                <span class="me-2">Visitante</span>
-                                <i class="bi bi-person-circle fs-3"></i>
-
+                            id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                            @guest
+                            <span class="me-2">Visitante</span>
+                            <i class="bi bi-person-circle fs-3"></i>
+                            @else
+                            {{auth()->user()->name}}
+                            @endguest
+     
                             </button>
-                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
-                                <li class="d-flex align-items-center me-2">
-                                    <a class="dropdown-item" href="#">Carrinho </a>
-                                    <i class="bi bi-cart-dash"></i>
-                                </li>
-                                <li class="d-flex align-items-center me-2">
-                                    <a class="dropdown-item" href="#">Informações </a>
-                                    <i class="bi bi-info-circle"></i>
-                                </li>
-                                <li>
-                                    <hr class="dropdown-divider">
-                                </li>
-                                @unless (auth())
-                                    <li><a class="dropdown-item" style="color: darkred;" href="logout">Sair</a></li>
-                                @else
-                                    <li>
-                                       
-                                        <a href="login" class="dropdown-item ">Entre na sua Conta  </a>
-                                       
-                                    </li>
-                                @endunless
-                            </ul>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
+                            <li><a class="dropdown-item" href="#">Carrinho</a></li>
+                            <li><a class="dropdown-item" href="teste">Informações</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            @auth
+                            <li><a class="dropdown-item" style="color: darkred;" href="{{url('/logout')}}">Sair</a></li>
+                            @else
+                            <li><a href="{{url('/login')}}" class="dropdown-item">Entre na sua Conta</a>
+                            @endauth
+                        </ul>
                         </div>
                     </div>
                 </div>
