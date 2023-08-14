@@ -24,7 +24,7 @@
         <div class="row mb-2">
             <div class="image-container">
                 <img class="rounded "
-                    src="{{ $item->thumburl != '#' ? asset($item->thumburl) : asset('placeholder.png') }}"
+                    src="{{ $item->thumburl != '#' ? asset('storage/'. Str::after($item->thumburl,'public/')) : asset('placeholder.png') }}"
                     alt="Thumbnail" />
             </div>
         </div>

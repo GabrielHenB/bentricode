@@ -9,7 +9,7 @@
             </h5>
         </div>
         <img class="card-img-top rounded-0 "
-            style=""src="{{ $item->thumburl != '#' ? asset($item->thumburl) : asset('placeholder.png') }}"
+            style=""src="{{ $item->thumburl != '#' ? asset('storage/'. Str::after($item->thumburl,'public/')) : asset('placeholder.png') }}"
             alt="Card image cap">
         <div class="card-body">
             <h6 class="card-subtitle muted "><span class='techs'>Utilizando {{ $item->techs }} </span></h6>

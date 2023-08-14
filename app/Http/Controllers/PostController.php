@@ -22,6 +22,8 @@ class PostController extends Controller
      */
     public function create()
     {
+        $this->authorize('admin');
+        //if(auth()->guest() || auth()->user()->cannot('admin')) abort(\Symfony\Component\HttpFoundation\Response::HTTP_FORBIDDEN);
         return view('posts.create');
     }
 
@@ -30,6 +32,9 @@ class PostController extends Controller
      */
     public function store(Request $request): RedirectResponse
     {
+        //So admins podem usar o store
+        $this->authorize('admin');
+       
         //Obter request
         //ja vem como parametro kk
         //Sanitizar request
@@ -65,7 +70,7 @@ class PostController extends Controller
         }
 
         //Criar
-        Post::create(array_merge($entrada, ['thumburl' => $filepath]));
+        $entrada = Post::create(array_merge($entrada, ['thumburl' => $filepath]));
 
         return redirect(route('dashboard'))->with('mensagem', "Post efetuado com sucesso!");
     }
@@ -88,9 +93,14 @@ class PostController extends Controller
      */
     public function edit(string $id)
     {
-        // TODO
+        //if(auth()->guest() || auth()->user()->cannot('admin')) abort(\Symfony\Component\HttpFoundation\Response::HTTP_FORBIDDEN);
 
-        return view('posts.edit', ['post' => \App\Models\Post::findOrFail($id)]);
+        $target = \App\Models\Post::findOrFail(htmlspecialchars(strip_tags($id)));
+
+        $this->authorize('admin', $target);
+        
+
+        return view('posts.edit', ['post' => $target]);
     }
 
     /**
@@ -98,9 +108,45 @@ class PostController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        // TODO
-        dd($request);
-        return null;
+        $target = Post::findOrFail(htmlspecialchars(strip_tags($id)));
+
+        //Verificar
+        $this->authorize('admin', $target);
+
+        //Validar 1
+        foreach($request->all() as $key=>$value){
+            if($key == "body"){
+                //Por enquanto nao filtra, ja que só ADMINs podem postar!!
+                //Inseguro se qualquer um puder postar
+            }else{
+                $request[$key] = filter_var($value, FILTER_SANITIZE_SPECIAL_CHARS);
+            }
+        }
+
+        //Validar 2
+        $entrada = $request->validate([
+            'title' => 'required',
+            'body' => 'string',
+            'thumburl' => 'image',
+            'user_id' => [\Illuminate\Validation\Rule::exists('users','id')]
+        ]);
+
+        //Files
+        if($request->hasFile('thumburl')){
+            //treat
+            //TODO file sanitization?
+            //store in public/post_thumbs uses disk from config
+            $filepath = $request->file('thumburl')->store('public/post_thumbs');
+            //dd($filepath);
+        }else{
+            $filepath = $target->thumburl; //o mesmo
+        }
+
+        //Update
+        $target = $target->update(array_merge($entrada, ['thumburl' => $filepath]));
+
+
+        return redirect(route('home'))->with('mensagem',"Post atualizado com sucesso!");
     }
 
     /**
