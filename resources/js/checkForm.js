@@ -50,8 +50,8 @@ export default class FormController{
     handle(e){
         e.preventDefault();
         if(this.validateAll()){
-            //e.submit();
-            console.log("Valido");
+            console.log("Formulario Válido! Enviando....");
+            this.form.submit();
             return true;
         }else{
             this.throwError(this.form, "Ocorreram erros e não foi possível enviar!",'beforeend');

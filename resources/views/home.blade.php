@@ -4,9 +4,13 @@
 - Home
 
 @endsection
-@section('carrosel')
+
+{{-- SECAO DO HOME EM SI EXTERNO AO CONTAINER EM LAYOUT --}}
+@section('home')
 <x-carrousel />
 @endsection
+
+
 {{-- SECAO DO CONTEUDO --}}
 
 @section('content')
@@ -20,8 +24,8 @@
         <p class="col-12">
 
             <p>Bem-vindo ao mundo da Bentricode, uma empresa de software
-            líder em inovação e excelência na criação de soluções t
-            ecnológicas sob medida. Fundada em 2019 por uma dupla de
+            líder em inovação e excelência na criação de soluções 
+            tecnológicas sob medida. Fundada em 2019 por uma dupla de
             visionários apaixonados por tecnologia, a Bentricode
             rapidamente se tornou uma referência no setor de desenvolvimento de software.</p>
             <br>
@@ -30,29 +34,29 @@
             de digital. Com décadas de experiência combinada, somos
             especializados em diversas áreas, incluindo desenvolvim
             ento de aplicativos móveis, softwares empresariais, sis
-            temas de gestão, soluções de e-commerce, inteligência a
-            rtificial e muito mais.</p>
+            temas de gestão, soluções de e-commerce, inteligência artificial
+             e muito mais.</p>
             <br>
-            <p>Na Bentricode, a satisfação do cliente é nossa prioridad
-            e número um. Estamos comprometidos em entender as necessi
-            dades específicas de cada cliente e entregar soluções que
+            <p>Na Bentricode, a satisfação do cliente é nossa prioridade
+             número um. Estamos comprometidos em entender as necessidades
+             específicas de cada cliente e entregar soluções que
             impulsionem seus negócios de forma eficiente e inovadora.
             Nossa abordagem personalizada garante que cada projeto
-            seja tratado com a devida atenção e cuidado, independent
-            emente do tamanho ou complexidade.</p>
+            seja tratado com a devida atenção e cuidado, independentemente
+             do tamanho ou complexidade.</p>
             <br>
             <p>Além disso, a Bentricode se orgulha de estar na vanguar
             da da tecnologia, acompanhando as últimas tendências do m
             ercado e incorporando as melhores práticas em nossos proj
             etos. Estamos sempre em busca de aprimorar nossas habilida
-            des e conhecimentos para oferecer aos nossos clientes solu
-            ções verdadeiramente vanguardistas.</p>
+            des e conhecimentos para oferecer aos nossos clientes soluções
+             verdadeiramente vanguardistas.</p>
             <br>
             <p>Confie na Bentricode para impulsionar a sua empresa rumo
-            ao sucesso tecnológico. Estamos prontos para enfrentar o
-            s desafios mais ambiciosos e transformar suas ideias em
-            realidade. Contate-nos hoje mesmo e descubra como a parce
-            ria com a Bentricode pode elevar seus negócios a um novo patamar tecnológico.</p>
+            ao sucesso tecnológico. Estamos prontos para enfrentar os
+             desafios mais ambiciosos e transformar suas ideias em
+            realidade. Contate-nos hoje mesmo e descubra como a parceria
+             com a Bentricode pode elevar seus negócios a um novo patamar tecnológico.</p>
         </p>
 
 
@@ -106,7 +110,7 @@
 
         </div>
         <div class="col-12 col-md-4">
-            <img class="img-fluid rounded border-3  shadow" style="" src="{{asset('marlon.jpg')}}" alt="">
+            <img class="img-fluid rounded border-3  shadow" style="" src="{{asset('marlon.jpg')}}" alt="Avatar Marlon">
         </div>
     </div>
 
@@ -122,17 +126,16 @@
             </p>
             <h2 class="fs-5">Habilidades:</h2>
             <ul class="text-muted">
-                <li>HTML, CSS, JavaScript / Intermediario</li>
-                <li>Bootstrap 5 / Basico</li>
-                <li>Programação: PHP e Java</li>
-                <li>Framework: Laravel</li>
-                <li>BD: MySQL (MariaDB)</li>
-                <li>Sim eu ja programei  em VHDL</li>
+                <li>PHP \ Java</li>
+                <li>HTML, CSS, JavaScript</li>
+                <li>Bootstrap 5 </li>
+                <li>Frameworks: Laravel \ Vue JS</li>
+                <li>Data: MySQL (MariaDB)</li>
             </ul>
 
         </div>
         <div class="col-12 col-md-4">
-            <img class="img-fluid rounded border-3  shadow" style="" src="{{asset('ga.jpg')}}" alt="Something Useless">
+            <img class="img-fluid rounded border-3  shadow" style="" src="{{asset('ga.png')}}" alt="Avatar Gabriel">
         </div>
      
                  
