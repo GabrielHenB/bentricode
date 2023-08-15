@@ -80,15 +80,23 @@
      
                             </button>
                         <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
-                            <li><a class="dropdown-item" href="#">Carrinho</a></li>
-                            <li><a class="dropdown-item" href="teste">Informações</a></li>
+                            <li class="d-flex justify-content-between mx-3">
+                                <a class="dropdown-item  p-0" href="#">Carrinho</a>
+                                <i class="bi bi-cart2"></i>
+                            </li>
+                            <li class="d-flex justify-content-between mx-3">
+                                <a class="dropdown-item p-0" href="teste">Informações</a>
+                                <i class="bi bi-info-circle"></i>
+                            </li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
                             @auth
                             <li><a class="dropdown-item" style="color: darkred;" href="{{url('/logout')}}">Sair</a></li>
                             @else
-                            <li><a href="{{url('/login')}}" class="dropdown-item">Entre na sua Conta</a>
+                            <li>
+                                <a href="{{url('/login')}}" class="dropdown-item text-danger text-decoration-underline">Entre na sua Conta</a>
+                            </li>
                             @endauth
                         </ul>
                         </div>
