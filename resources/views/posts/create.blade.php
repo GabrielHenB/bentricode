@@ -11,7 +11,7 @@
             <h2 class='col-12 center'>Criar um Novo Post</h2>
         </div>
         <div class="container form-wrapper">
-            <form action="{{route('posts.store')}}" method="POST" enctype="multipart/form-data">
+            <form action="{{route('posts.store')}}" method="POST" enctype="multipart/form-data" class="form-wrap">
                 @csrf
                 <x-form-item name='title' placeholder='Titulo do Post' />
                 <!-- temporario -->

@@ -1,5 +1,6 @@
 import './bootstrap';
 import '~boots/js/bootstrap.bundle.min.js';
+import FormController from './checkForm';
 
 const inputPesquisa = document.querySelector('.input-pesquisa');
 const btnPesquisa = document.querySelector('.btn-pesquisa');
@@ -22,6 +23,17 @@ document.querySelector('.form-pesquisar').addEventListener('submit', function (e
 });
 
 //Fecha mensagem flash apos exibida
-document.getElementById('fechar').addEventListener('click', function () {
-    document.getElementById('mensagem-flash').style = "display: none";
-})
+const btnFecharFlash = document.getElementById('fechar');
+if(btnFecharFlash){
+    btnFecharFlash.addEventListener('click', function () {
+        document.getElementById('mensagem-flash').style = "display: none";
+    });
+}
+
+
+//CARREGA AS VALIDAÇÕES DE FORMULARIO
+
+window.onload = () => {
+    //console.log(document.querySelector('.form-wrap'));
+    const form_controller = new FormController(document.querySelector('.form-wrap'), 'form-validate');
+}

@@ -4,7 +4,7 @@
     @unless($type == 'textarea')
         <input type="{{$type}}"
         name="{{$name}}"
-        {{$attributes->merge(['class' => ($type == 'file') ? 'form-control-file' : 'form-control '.$tamanho])}}
+        {{$attributes->merge(['class' => ($type == 'file') ? 'form-control-file form-validate' : 'form-control form-validate '.$tamanho])}}
         id="input{{$name}}"
         aria-describedby="{{$type}}Help" placeholder="{{$placeholder}}"
         value="{{$value}}"
@@ -16,13 +16,13 @@
             </small>
         @endif
     @else
-        <textarea class="form-control" name="{{$name}}" id="FormControl{{$name}}" {{$attributes->merge(['rows' => $tamanho])}}>{{$value}}</textarea>
+        <textarea class="form-control form-validate" name="{{$name}}" id="FormControl{{$name}}" {{$attributes->merge(['rows' => $tamanho])}}>{{$value}}</textarea>
         <small class="form-text text-muted">
             Este campo aceita tags HTML
         </small>
     @endunless
     <!-- Caso ocorram erros eles serão exibidos aqui -->
     @error($name)
-    <p class="text-red-500 text-xs mt-1" style="color: red; font-size: x-small;">{{$message}}</p>
+    <p class="text-red-500 text-xs mt-1 form-error">{{$message}}</p>
     @enderror
 </div>

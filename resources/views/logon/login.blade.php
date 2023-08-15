@@ -12,7 +12,7 @@
             <small>Ainda não possuí uma conta ? <a href='register'> Cadastre-se</a></small>
         </div>
         <div class="container form-wrapper">
-            <form action="{{url('login')}}" method="POST" enctype="multipart/form-data">
+            <form action="{{url('login')}}" method="POST" enctype="multipart/form-data" class="form-wrap">
                 @csrf
                 <x-form-item name='email' type='email' placeholder='email@dominio.com' required/>
                 <x-form-item name='password' type='password' required/>

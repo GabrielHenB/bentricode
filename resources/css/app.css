@@ -151,6 +151,11 @@ main {
     padding: 4px;
 }
 
+.form-error{
+    color: red; 
+    font-size: x-small;
+}
+
 /* PAGINADOR COISA */
 .texto-paginador{
     color: white;

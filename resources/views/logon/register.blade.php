@@ -11,7 +11,7 @@
             <h2 class='col-12 center'>Crie uma conta Bentricode!</h2>
         </div>
         <div class="container form-wrapper">
-            <form action="create" method="POST" enctype="multipart/form-data">
+            <form action="create" method="POST" enctype="multipart/form-data" class="form-wrap">
                 @csrf
                 <x-form-item name='email' type='email' placeholder='email@dominio.com' value="{{old('email')}}" required/>
                 <x-form-item name='name' placeholder='Seu nome' value="{{old('name')}}" required/>
