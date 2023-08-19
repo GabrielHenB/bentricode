@@ -9,13 +9,14 @@
 {{-- SECAO DO CONTEUDO --}}
 
 @section('content')
+<div class='col-lg-9 col-md-12 conteudo'>
     <div class='container'>
         <div class='row'>
             <h2 class='col-12 center'>Posts Recentes</h2>
             
         </div>
         <div class="conteiner">
-            <div class="row cards-posts">
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3">
                 <!-- Exemplo de uso de componentes blade. Eles sempre tem o <x-(namespace.componente)> -->
                 @foreach($post as $item)
                     <x-post :item="$item" />
@@ -25,26 +26,12 @@
         </div>
         
     </div>
-
+</div>
 @endsection
 
 {{-- SECAO DA BARRA LATERAL DIREITA --}}
 
 @section('sidebar')
-<div class="container">
-    <div class="row barra-lateral-generica">
-        <div class="col-12 item-barra-lateral-generica">
-            Barra Lateral Generica
-        </div>
-        <div class="col-12 item-barra-lateral-generica">
-            Não sei o que colocar aqui ainda
-        </div>
-        <div class="col-12 item-barra-lateral-generica">
-            Talvez um menu secundário?
-        </div>
-        <div class="col-12 item-barra-lateral-generica">
-            Eu gosto de sorvete
-        </div>
-    </div>
-</div>
+            <x-sidebar-component />
+
 @endsection

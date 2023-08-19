@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Post;
+use Illuminate\Http\RedirectResponse;
 
 class PostController extends Controller
 {
@@ -20,15 +22,57 @@ class PostController extends Controller
      */
     public function create()
     {
-        // TODO
+        $this->authorize('admin');
+        //if(auth()->guest() || auth()->user()->cannot('admin')) abort(\Symfony\Component\HttpFoundation\Response::HTTP_FORBIDDEN);
+        return view('posts.create');
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(Request $request): RedirectResponse
     {
-        // TODO
+        //So admins podem usar o store
+        $this->authorize('admin');
+       
+        //Obter request
+        //ja vem como parametro kk
+        //Sanitizar request
+        foreach($request->all() as $key=>$value){
+            if($key == "body"){
+                //Por enquanto nao filtra, ja que só ADMINs podem postar!!
+                //Inseguro se qualquer um puder postar
+            }else{
+                $request[$key] = filter_var($value, FILTER_SANITIZE_SPECIAL_CHARS);
+            }
+            
+        }
+        //$request['user_id'] = auth()->user()->id;
+        $request['user_id'] = $request->input('user_id'); //tambem temporario
+
+        //Validar request
+        $entrada = $request->validate([
+            'title' => 'required',
+            'body' => 'string',
+            'thumburl' => 'image',
+            'user_id' => [\Illuminate\Validation\Rule::exists('users','id')]
+        ]);
+
+        //Files
+        if($request->hasFile('thumburl')){
+            //treat
+            //TODO file sanitization?
+            //store in public/post_thumbs uses disk from config
+            $filepath = $request->file('thumburl')->store('public/post_thumbs');
+            //dd($filepath);
+        }else{
+            $filepath = '#'; //placeholder
+        }
+
+        //Criar
+        $entrada = Post::create(array_merge($entrada, ['thumburl' => $filepath]));
+
+        return redirect(route('dashboard'))->with('mensagem', "Post efetuado com sucesso!");
     }
 
     /**
@@ -49,7 +93,14 @@ class PostController extends Controller
      */
     public function edit(string $id)
     {
-        // TODO
+        //if(auth()->guest() || auth()->user()->cannot('admin')) abort(\Symfony\Component\HttpFoundation\Response::HTTP_FORBIDDEN);
+
+        $target = \App\Models\Post::findOrFail(htmlspecialchars(strip_tags($id)));
+
+        $this->authorize('admin', $target);
+        
+
+        return view('posts.edit', ['post' => $target]);
     }
 
     /**
@@ -57,7 +108,45 @@ class PostController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        // TODO
+        $target = Post::findOrFail(htmlspecialchars(strip_tags($id)));
+
+        //Verificar
+        $this->authorize('admin', $target);
+
+        //Validar 1
+        foreach($request->all() as $key=>$value){
+            if($key == "body"){
+                //Por enquanto nao filtra, ja que só ADMINs podem postar!!
+                //Inseguro se qualquer um puder postar
+            }else{
+                $request[$key] = filter_var($value, FILTER_SANITIZE_SPECIAL_CHARS);
+            }
+        }
+
+        //Validar 2
+        $entrada = $request->validate([
+            'title' => 'required',
+            'body' => 'string',
+            'thumburl' => 'image',
+            'user_id' => [\Illuminate\Validation\Rule::exists('users','id')]
+        ]);
+
+        //Files
+        if($request->hasFile('thumburl')){
+            //treat
+            //TODO file sanitization?
+            //store in public/post_thumbs uses disk from config
+            $filepath = $request->file('thumburl')->store('public/post_thumbs');
+            //dd($filepath);
+        }else{
+            $filepath = $target->thumburl; //o mesmo
+        }
+
+        //Update
+        $target = $target->update(array_merge($entrada, ['thumburl' => $filepath]));
+
+
+        return redirect(route('home'))->with('mensagem',"Post atualizado com sucesso!");
     }
 
     /**
@@ -65,6 +154,11 @@ class PostController extends Controller
      */
     public function destroy(string $id)
     {
-        // TODO
+        //TODO: verificar se o usuario tem essa permissao ou usar middleware
+        $post = Post::findOrFail($id);
+        //dd($post);
+        $post->delete();
+
+        return redirect(route('home'))->with('mensagem', 'Post deletado com sucesso!');
     }
 }

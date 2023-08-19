@@ -21,6 +21,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'isAdmin'
     ];
 
     /**
@@ -42,4 +43,13 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    /**
+     * Um USER tem muitos POSTS
+     * 
+     */
+    public function posts()
+    {
+        return $this->hasMany(Posts::class);
+    }
 }

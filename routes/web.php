@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\ProdutoController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,27 +22,37 @@ Route::get('/', function () {
     return view('home');
 })->name('home');
 
-//Route::get('/posts', [PostController::class,'index'])->name('posts');
-
 //Cria ja endpoints CRUD-like
 Route::resource('posts',PostController::class);
+//Route::resource('projetos', ProdutoController::class);
+// OBS ISSO FOI SO PARA TESTAR O CAN ADMIN TEMPORARIAMENTE
 
-Route::get('search', function (\Illuminate\Http\Request $request) {
-    //dd($request);
-    //TODO separar em um outro objeto
-    foreach($request->all() as $chave=>$valor){
-        $request[$chave] = filter_var($valor,FILTER_SANITIZE_SPECIAL_CHARS);
-    }
-    
-    $items = \App\Models\Post::where('title','like','%'.$request['squery'].'%')->get();
-    
-    return view('search', ['items' => $items]);
-})->name('search');
+// PESQUISAR 
+Route::get('search',[\App\Http\Controllers\SearchController::class,"index"])->name('search');
 
-//Testes rota criada temporariamente
-Route::get('aboutus', function () {
+// SOBRE NOS
+Route::get('aboutus', fn()=>view('aboutus'))->name('aboutus');
 
-    return view('aboutus');
-})->name('aboutus');
 // ================ ROTAS DE SESSAO E AUTH =============
 
+Route::get('register',[\App\Http\Controllers\AuthController::class,"create"])->name('cadastro')->middleware('guest');
+Route::get('login',[\App\Http\Controllers\AuthController::class,"index"])->name('login')->middleware('guest');
+Route::post('login',[\App\Http\Controllers\AuthController::class,"login"])->middleware('guest');
+Route::post('create',[\App\Http\Controllers\UserController::class,"store"])->middleware('guest');
+Route::get('logout', [\App\Http\Controllers\AuthController::class,"logout"])->name('logout')->middleware('auth');
+
+//  =============== ROTAS ADMIN ========================
+// TODO: agrupar rotas em um mesmo middleware admin
+
+Route::middleware('can:admin')->group(function(){
+    Route::resource('projetos', ProdutoController::class)->except(['index','show']);
+    //dashboard
+    Route::get('dashboard', function () {
+        return view('admin.dashboard', 
+        [
+            'posts' => \App\Models\Post::paginate(8),
+            'produtos' => \App\Models\Produto::paginate(8)
+    ]);
+    })->name('dashboard');
+});
+Route::resource('projetos', ProdutoController::class)->only(['index','show']);
