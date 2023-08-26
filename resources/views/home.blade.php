@@ -63,7 +63,32 @@
     </div>
     <div class="row text-bg-light text-center">
         <div class="col-12">
-            <h1>Redes sociais:</h1>
+            <h1> > Nossos Serviços</h1>
+        </div>
+        <div class="col m-2">
+            <div class="col-12 fs-4 fw-bold">web</div>
+            <div class="col-12"><i class="bi bi-braces"></i></div>
+            <div class="col-12">Desenvolvimento de front-end e back-end para plataformas web</div>
+        </div>
+        <div class="col m-2">
+            <div class="col-12 fs-4 fw-bold">mobile</div>
+            <div class="col-12"><i class="bi bi-android"></i></div>
+            <div class="col-12">Aplicativos mobile para Android e interfaces</div>
+        </div>
+        <div class="col m-2">
+            <div class="col-12 fs-4 fw-bold">iot</div>
+            <div class="col-12"><i class="bi bi-router"></i></div>
+            <div class="col-12">Soluções IoT diversas</div>
+        </div>
+        <div class="col m-2">
+            <div class="col-12 fs-4 fw-bold">ui/ux</div>
+            <div class="col-12"><i class="bi bi-window-fullscreen"></i></div>
+            <div class="col-12">Design de interfaces UI/UX para serviços</div>
+        </div>
+    </div>
+    <div class="row text-bg-light text-center">
+        <div class="col-12">
+            <h1>> Redes sociais</h1>
         </div>
         <a href="#" class="col m-2 btn btn-info text-light fs-4 fw-bold "> 
             <div class="row">
@@ -119,10 +144,11 @@
             <blockquote class="blockquote  ">
                 <p class="display-6">Gabriel Henrique Braz</p>
                 <footer class="blockquote-footer ">Quem é ele?  <cite
-                        title="Título da fonte">Desenvolvedor Fullstack (será?)</cite></footer>
+                        title="Título da fonte">Desenvolvedor</cite></footer>
             </blockquote>
             <p class="text-muted">
-                Não sei o que colocar aqui {{-- Sério --}}
+                Sou um estudante de engenharia de computação, tenho 
+                conhecimentos em web full-stack mas foco em back-end, além disso, também me interesso por cybersegurança e redes de computadores.
             </p>
             <h2 class="fs-5">Habilidades:</h2>
             <ul class="text-muted">
@@ -135,7 +161,7 @@
 
         </div>
         <div class="col-12 col-md-4">
-            <img class="img-fluid rounded border-3  shadow" style="" src="{{asset('ga.png')}}" alt="Avatar Gabriel">
+            <img class="img-fluid rounded border-3  shadow" style="" src="{{asset('ga2.jpg')}}" alt="Avatar Gabriel">
         </div>
      
                  

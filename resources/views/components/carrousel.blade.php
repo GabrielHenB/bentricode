@@ -6,10 +6,10 @@
     </div>
     <div class="carousel-inner">
         <div class="carousel-item active">
-            <img src="banner3.jpg" class="d-block w-100" alt="Carousel Dois">
+            <img src="banner6.jpg" class="d-block w-100" alt="Carousel Dois">
         </div>
         <div class="carousel-item">
-            <img src="banner4.jpg" class="d-block w-100" alt="Carousel Um">
+            <img src="banner7.jpg" class="d-block w-100" alt="Carousel Um">
         </div>
         <div class="carousel-item">
             <img src="banner2.jpg" class="d-block w-100" alt="Carousel Um">

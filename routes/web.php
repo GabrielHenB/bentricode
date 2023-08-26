@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProdutoController;
+use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -47,12 +48,8 @@ Route::get('logout', [\App\Http\Controllers\AuthController::class,"logout"])->na
 Route::middleware('can:admin')->group(function(){
     Route::resource('projetos', ProdutoController::class)->except(['index','show']);
     //dashboard
-    Route::get('dashboard', function () {
-        return view('admin.dashboard', 
-        [
-            'posts' => \App\Models\Post::paginate(8),
-            'produtos' => \App\Models\Produto::paginate(8)
-    ]);
-    })->name('dashboard');
+    Route::get('dashboard', [DashboardController::class,'index'])->name('dashboard');
+    Route::get('dashboard/posts', [DashboardController::class,'posts']);
+    Route::get('dashboard/projs',[DashboardController::class,'projects']);
 });
 Route::resource('projetos', ProdutoController::class)->only(['index','show']);

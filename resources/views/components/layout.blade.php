@@ -60,8 +60,8 @@
                             </li>
                         </ul>
                         <form method="GET" action="{{route('search')}}?squery={{htmlspecialchars(strip_tags(request('squery')))}}" class="d-flex form-pesquisar">
-                            <input name="squery" class="form-control me-2 input-pesquisa" type="search" placeholder="{{request('squery') ?? "..."}}" aria-label="Search">
-                            <button class="btn btn-outline-success btn-pesquisa" type="submit">Search</button>
+                            <input name="squery" class="form-control me-2 input-pesquisa" type="search" placeholder="{{request('squery') ?? "Pesquisar"}}" aria-label="Search">
+                            <button class="btn btn-primary btn-pesquisa" type="submit"><i class="bi bi-search"></i></button>
                         </form>
                     </div>
 
@@ -81,7 +81,7 @@
                             </button>
                         <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
                             <li class="d-flex justify-content-between mx-3">
-                                <a class="dropdown-item  p-0" href="#">Carrinho</a>
+                                <a class="dropdown-item  p-0" href="#">Contrato</a>
                                 <i class="bi bi-cart2"></i>
                             </li>
                             <li class="d-flex justify-content-between mx-3">

@@ -160,3 +160,15 @@ main {
 .texto-paginador{
     color: white;
 }
+
+/* DASHBOARD */
+.container-grafico{
+    width: 100%;
+    max-width: 360px;
+}
+
+@media (max-width: 480px){
+    .container-grafico{
+        max-width: 200px;
+    }
+}
