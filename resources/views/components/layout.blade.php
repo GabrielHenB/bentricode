@@ -117,6 +117,7 @@
 
     @yield('home', '')
     <!-- Conteudo inicio -->
+    @unless(request()->routeIs("home"))
     {{-- Isso traz quaisquer que esteja em content no que extender essa view --}}
     <main class='container main text-white p-0'>
         
@@ -129,6 +130,7 @@
             <!-- Sidebar final -->
         </div>
     </main>
+    @endunless
     <!-- Conteudo final -->
 
     <!-- Footer inicio -->

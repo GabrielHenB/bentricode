@@ -13,7 +13,7 @@
         </div>
 
         <div style="padding: 8px;" class="row bg-dark rounded">
-            <div class="col-12 col-md-2 col-lg-2 col-sm-12 col-xs-12 col-xl-2 estatisticas">
+            <div class="col estatisticas">
                 <div class="border border-black rounded">
                     <ul class="list-group">
                         <li class="list-group-item"> <strong>Posts:</strong> {{$posts->count()}}</li>
@@ -22,7 +22,7 @@
                     </ul>
                 </div>
             </div>
-            <div class="col-12 col-md-10 col-lg-10 col-sm-12 col-xs-12 col-xl-10 funcoes">
+            <div class="col-lg-10 col-md-9 col-12 funcoes">
                 <h2 class="text-center">Funções Admin</h2>
                 <ul style="list-style: none;" class="d-flex justify-content-evenly rounded bg-light p-2">
                     <li class="ml-4"><a class="btn btn-primary" href="{{url('dashboard/posts')}}">Posts</a></li>
@@ -33,11 +33,11 @@
             </div>
         </div>
 
-        <div style="padding: 8px; margin-top: 5px;" class="row d-flex justify-content-between bg-dark rounded text-dark">
-            <div class="col-8 bg-light rounded container-grafico">
+        <div style="padding: 8px; margin-top: 5px;" class="row bg-dark rounded text-dark gap-4 justify-content-center">
+            <div class="col-md-4 col-7 bg-light rounded ">
                 <canvas id="grafico"></canvas>
             </div>
-            <div class="col-4 bg-light border rounded text-dark">
+            <div class="col-md col-12  bg-light border rounded text-dark">
                 <h1 class="text-center">Mais Recentes</h1>
                 <div class="row text-center card-dashboard">
                     <p><a href="{{route('posts.show',$posts[0]->id)}}">{{ $posts[0]->title }}</a></p>
