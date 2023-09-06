@@ -1,14 +1,14 @@
 @extends('components.layout')
 
 @section('adicional')
-    - Admin Dashboard - Projetos
+    - Admin Dashboard - Usuarios
 @endsection
 
 @section('content')
     <div class="container">
 
         <div class="row ">
-            <h2> <a href="{{route('dashboard')}}" style="text-decoration: none; color: skyblue;">Dashboard</a> > Projetos</h2>
+            <h2> <a href="{{route('dashboard')}}" style="text-decoration: none; color: skyblue;">Dashboard</a> > Usuários</h2>
             <hr class="mt-3">
         </div>
 
@@ -16,24 +16,26 @@
             <thead>
                 <tr>
                     <th scope='col'>#</th>
-                    <th scope='col'>Titulo</th>
-                    <th scope='col'>Tecnologias</th>
+                    <th scope='col'>Nome</th>
+                    <th scope='col'>E-mail</th>
                     <th scope='col'>Criado em</th>
                     <th scope='col'>Atualizado em</th>
+                    <th scope='col'>Admin ?</th>
                     <th scope='col'>Funções</th>
                 </tr>
             </thead>
             <tbody>
-                    @foreach ($produtos as $produto)
+                    @foreach ($users as $user)
                         <tr>
                             <th scope="row">{{ $loop->iteration }}</th>
-                            <td> <a href="{{route('projetos.show',$produto->id)}}">{{ $produto->name }}</a> </td>
-                            <td> {{ $produto->techs }} </td>
-                            <td> {{ $produto->created_at }} </td>
-                            <td> {{ $produto->updated_at }} </td>
+                            <td> <a href="#">{{ $user->name }}</a> </td>
+                            <td> {{ $user->email }} </td>
+                            <td> {{ $user->created_at }} </td>
+                            <td> {{ $user->updated_at }} </td>
+                            <td>{{ $user->isAdmin ? "Sim" : "Não" }}</td>
                             <td>
-                                <button type="button" onclick="window.location.href='{{route('projetos.edit', $produto->id)}}'" class="btn btn-primary">Editar</button>
-                                <form class="dashboard-remove" action='{{route('projetos.destroy', $produto->id)}}' method='POST'>
+                                <button type="button" onclick="window.location.href='{{route('users.edit', $user->id)}}'" class="btn btn-primary">Editar</button>
+                                <form class="dashboard-remove" action='{{route('users.destroy', $user->id)}}' method='POST'>
                                     {{csrf_field()}}
                                     @method('DELETE')
                                 <button type="submit" onclick="return confirm('Tem certeza?')" class="btn btn-danger btn-remover">Remover</button>
@@ -41,9 +43,9 @@
                             </td>
                         </tr>
                     @endforeach
-                    <x-dashboard-header gotoRoute="{{route('projetos.create')}}" />
+                    <x-dashboard-header gotoRoute="{{route('cadastro')}}" />
                 {{-- PAGINACAO--}}
-                {{$produtos->links()}}
+                {{$users->links()}}
             </tbody>
         </table>
     </div>

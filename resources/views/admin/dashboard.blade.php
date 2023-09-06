@@ -27,7 +27,7 @@
                 <ul style="list-style: none;" class="d-flex justify-content-evenly rounded bg-light p-2">
                     <li class="ml-4"><a class="btn btn-primary" href="{{url('dashboard/posts')}}">Posts</a></li>
                     <li class="ml-4"><a class="btn btn-primary" href="{{url('dashboard/projs')}}">Projetos</a></li>
-                    <li class="ml-4"><a class="btn btn-primary" href="{{url('dashboard')}}">Usuários</a></li>
+                    <li class="ml-4"><a class="btn btn-primary" href="{{url('dashboard/users')}}">Usuários</a></li>
                     <li class="ml-4"><a class="btn btn-primary" href="{{url('dashboard')}}">Configurações</a></li>
                 </ul>
             </div>
@@ -40,10 +40,16 @@
             <div class="col-md col-12  bg-light border rounded text-dark">
                 <h1 class="text-center">Mais Recentes</h1>
                 <div class="row text-center card-dashboard">
-                    <p><a href="{{route('posts.show',$posts[0]->id)}}">{{ $posts[0]->title }}</a></p>
-                    <span class="small">{{ $posts[0]->created_at }}</span>
-                    <p><a href="{{route('projetos.show',$produtos[0]->id)}}">{{ $produtos[0]->name }}</a></p>
-                    <span class="small">{{ $produtos[0]->created_at }}</span>
+                    @if($posts->count())
+                        <p><a href="{{route('posts.show',$posts[0]->id)}}">{{ $posts[0]->title }}</a></p>
+                        <span class="small">{{ $posts[0]->created_at }}</span>
+                        <hr>
+                        <p><a href="{{route('projetos.show',$produtos[0]->id)}}">{{ $produtos[0]->name }}</a></p>
+                        <p> {{ $produtos[0]->description }} </p>
+                        <span class="small">{{ $produtos[0]->created_at }}</span>
+                    @else
+                        <p>Sem posts no momento</p>
+                    @endif
                 </div>
             </div>
         </div>
@@ -61,7 +67,7 @@
             ],
             datasets: [{
                 label: 'Itens do Site',
-                data: [{{$posts->count()}},{{$produtos->count()}}, 2],
+                data: [{{$posts->count()}},{{$produtos->count()}}, {{$users}}],
                 backgroundColor: [
                 'rgb(255, 99, 132)',
                 'rgb(54, 162, 235)',

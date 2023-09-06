@@ -14,44 +14,73 @@
 
             </div>
             <div class='row text-bg-light'>
-                <h2 class="col-12 text-center">Bentricode: Inovação e Excelência em Soluções de Software</h2>
-                <p class="col-12">
+                <div class="col-4 mr-2 text-bg-dark rounded">
+                    <article class="col-12 mt-2 text-center">
+                        <h1 class="col-12"> > Nossos Serviços</h1>
+                        <div class="col m-2">
+                            <div class="col-12 fs-4 fw-bold">web</div>
+                            <div class="col-12"><i class="bi bi-braces"></i></div>
+                            <div class="col-12">Desenvolvimento de front-end e back-end para plataformas web</div>
+                        </div>
+                        <div class="col m-2">
+                            <div class="col-12 fs-4 fw-bold">mobile</div>
+                            <div class="col-12"><i class="bi bi-android"></i></div>
+                            <div class="col-12">Aplicativos mobile para Android e interfaces</div>
+                        </div>
+                        <div class="col m-2">
+                            <div class="col-12 fs-4 fw-bold">iot</div>
+                            <div class="col-12"><i class="bi bi-router"></i></div>
+                            <div class="col-12">Soluções IoT diversas</div>
+                        </div>
+                        <div class="col m-2">
+                            <div class="col-12 fs-4 fw-bold">ui/ux</div>
+                            <div class="col-12"><i class="bi bi-window-fullscreen"></i></div>
+                            <div class="col-12">Design de interfaces UI/UX para serviços</div>
+                        </div>
+                        <button class="btn btn-success">Contate-nos</button>
+                    </article>
+                </div>
+                <div class="col-8">
+                    <h2 class="col-12 text-center">Bentricode: Inovação e Excelência em Soluções de Software</h2>
+                    <p class="col-12">
 
-                <p>Bem-vindo ao mundo da Bentricode, uma empresa de software
-                    líder em inovação e excelência na criação de soluções
-                    tecnológicas sob medida. Fundada em 2019 por uma dupla de
-                    visionários apaixonados por tecnologia, a Bentricode
-                    rapidamente se tornou uma referência no setor de desenvolvimento de software.</p>
-                <br>
-                <p>Nossa equipe é composta por profissionais altamente qual
-                    ificados e apaixonados por transformar ideias em realida
-                    de digital. Com décadas de experiência combinada, somos
-                    especializados em diversas áreas, incluindo desenvolvim
-                    ento de aplicativos móveis, softwares empresariais, sis
-                    temas de gestão, soluções de e-commerce, inteligência artificial
-                    e muito mais.</p>
-                <br>
-                <p>Na Bentricode, a satisfação do cliente é nossa prioridade
-                    número um. Estamos comprometidos em entender as necessidades
-                    específicas de cada cliente e entregar soluções que
-                    impulsionem seus negócios de forma eficiente e inovadora.
-                    Nossa abordagem personalizada garante que cada projeto
-                    seja tratado com a devida atenção e cuidado, independentemente
-                    do tamanho ou complexidade.</p>
-                <br>
-                <p>Além disso, a Bentricode se orgulha de estar na vanguar
-                    da da tecnologia, acompanhando as últimas tendências do m
-                    ercado e incorporando as melhores práticas em nossos proj
-                    etos. Estamos sempre em busca de aprimorar nossas habilida
-                    des e conhecimentos para oferecer aos nossos clientes soluções
-                    verdadeiramente vanguardistas.</p>
-                <br>
-                <p>Confie na Bentricode para impulsionar a sua empresa rumo
-                    ao sucesso tecnológico. Estamos prontos para enfrentar os
-                    desafios mais ambiciosos e transformar suas ideias em
-                    realidade. Contate-nos hoje mesmo e descubra como a parceria
-                    com a Bentricode pode elevar seus negócios a um novo patamar tecnológico.</p>
-                </p>
+                    <p>Bem-vindo ao mundo da Bentricode, uma empresa de software
+                        líder em inovação e excelência na criação de soluções
+                        tecnológicas sob medida. Fundada em 2019 por uma dupla de
+                        visionários apaixonados por tecnologia, a Bentricode
+                        rapidamente se tornou uma referência no setor de desenvolvimento de software.</p>
+                    <br>
+                    <p>Nossa equipe é composta por profissionais altamente qual
+                        ificados e apaixonados por transformar ideias em realida
+                        de digital. Com décadas de experiência combinada, somos
+                        especializados em diversas áreas, incluindo desenvolvim
+                        ento de aplicativos móveis, softwares empresariais, sis
+                        temas de gestão, soluções de e-commerce, inteligência artificial
+                        e muito mais.</p>
+                    <br>
+                    <p>Na Bentricode, a satisfação do cliente é nossa prioridade
+                        número um. Estamos comprometidos em entender as necessidades
+                        específicas de cada cliente e entregar soluções que
+                        impulsionem seus negócios de forma eficiente e inovadora.
+                        Nossa abordagem personalizada garante que cada projeto
+                        seja tratado com a devida atenção e cuidado, independentemente
+                        do tamanho ou complexidade.</p>
+                    <br>
+                    <p>Além disso, a Bentricode se orgulha de estar na vanguar
+                        da da tecnologia, acompanhando as últimas tendências do m
+                        ercado e incorporando as melhores práticas em nossos proj
+                        etos. Estamos sempre em busca de aprimorar nossas habilida
+                        des e conhecimentos para oferecer aos nossos clientes soluções
+                        verdadeiramente vanguardistas.</p>
+                    <br>
+                    <p>Confie na Bentricode para impulsionar a sua empresa rumo
+                        ao sucesso tecnológico. Estamos prontos para enfrentar os
+                        desafios mais ambiciosos e transformar suas ideias em
+                        realidade. Contate-nos hoje mesmo e descubra como a parceria
+                        com a Bentricode pode elevar seus negócios a um novo patamar tecnológico.</p>
+                    </p>
+                </div>
+                
 
 
             </div>

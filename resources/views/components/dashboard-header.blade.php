@@ -3,6 +3,7 @@
     <div class="col">
         <a class="btn btn-primary" href="{{url('dashboard/posts')}}">Posts</a>
         <a class="btn btn-primary" href="{{url('dashboard/projs')}}">Projetos</a>
+        <a class="btn btn-primary" href="{{url('dashboard/users')}}">Usuários</a>
     </div>
     <div class="col ms-auto d-flex justify-content-end">
 
