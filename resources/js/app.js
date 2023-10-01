@@ -34,6 +34,19 @@ if(btnFecharFlash){
 //CARREGA AS VALIDAÇÕES DE FORMULARIO
 
 window.onload = () => {
-    //console.log(document.querySelector('.form-wrap'));
-    const form_controller = new FormController(document.querySelector('.form-wrap'), 'form-validate');
+    console.log(document.querySelector('.form-wrap'));
+    const form = document.querySelector('.form-wrap');
+    if(form){
+        const form_controller = new FormController(document.querySelector('.form-wrap'), 'form-validate');
+    }
+    
+
+    const comment_forms = document.querySelectorAll('.comments-form');
+    comment_forms.forEach((element) => {
+        console.log(element);
+        element.addEventListener('submit', (event) => {
+            event.preventDefault();
+            alert("Obs: Para comentar é necessário estar logado em uma conta Bentricode!\n A função comentários ainda não está disponível!");
+        })
+    })
 }

@@ -9,98 +9,78 @@
 
         <div class="row ">
             <h2>Dashboard Admin</h2>
-
-
-
             <hr class="mt-3">
         </div>
 
+        <div style="padding: 8px;" class="row bg-dark rounded">
+            <div class="col estatisticas">
+                <div class="border border-black rounded">
+                    <ul class="list-group">
+                        <li class="list-group-item"> <strong>Posts:</strong> {{$posts->count()}}</li>
+                        <li class="list-group-item"> <strong>Projetos:</strong> {{ $produtos->count() }} </li>
+                        <li class="list-group-item"> <strong>Usuários:</strong> ? </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-10 col-md-9 col-12 funcoes">
+                <h2 class="text-center">Funções Admin</h2>
+                <ul style="list-style: none;" class="d-flex justify-content-evenly rounded bg-light p-2">
+                    <li class="ml-4"><a class="btn btn-primary" href="{{url('dashboard/posts')}}">Posts</a></li>
+                    <li class="ml-4"><a class="btn btn-primary" href="{{url('dashboard/projs')}}">Projetos</a></li>
+                    <li class="ml-4"><a class="btn btn-primary" href="{{url('dashboard/users')}}">Usuários</a></li>
+                    <li class="ml-4"><a class="btn btn-primary" href="{{url('dashboard')}}">Configurações</a></li>
+                </ul>
+            </div>
+        </div>
 
-        <table class="table lista-posts-admin">
-            <thead>
-                <tr>
-                    <th scope='col'>#</th>
-                    <th scope='col'>Titulo</th>
-                    <th scope='col'>{{ request()->input('see') == 'projetos' ? 'Tecnologias' : 'Autor' }}</th>
-                    <th scope='col'>Criado em</th>
-                    <th scope='col'>Atualizado em</th>
-                    <th scope='col'>Funções</th>
-                </tr>
-            </thead>
-            <tbody>
-                @if (request()->input('see') == 'projetos')
-                    @foreach ($produtos as $produto)
-                        <tr>
-                            <th scope="row">{{ $loop->iteration }}</th>
-                            <td> <a href="{{route('projetos.show',$produto->id)}}">{{ $produto->name }}</a> </td>
-                            <td> {{ $produto->techs }} </td>
-                            <td> {{ $produto->created_at }} </td>
-                            <td> {{ $produto->updated_at }} </td>
-                            <td>
-                                <button type="button" onclick="window.location.href='{{route('projetos.edit', $produto->id)}}'" class="btn btn-primary">Editar</button>
-                                <form class="dashboard-remove" action='{{route('projetos.destroy', $produto->id)}}' method='POST'>
-                                    {{csrf_field()}}
-                                    @method('DELETE')
-                                <button type="submit" onclick="return confirm('Tem certeza?')" class="btn btn-danger btn-remover">Remover</button>
-                                </form>
-                            </td>
-                        </tr>
-                    @endforeach
-                    <div class="row mb-3">
-                        <div class="col">
-                            <a class="btn btn-primary" href="?see=posts">Posts</a>
-                            <a class="btn btn-primary" href="?see=projetos">Projetos</a>
-
-
-                        </div>
-                        <div class="col ms-auto d-flex justify-content-end">
-
-                            <a class="btn btn-success" href="{{ route('projetos.create') }}">Adicionar Novo Projeto</a>
-
-                        </div>
-                    </div>
-
-
-                    
-                @else
-                    @foreach ($posts as $post)
-                        <tr>
-                            <th scope="row">{{ $loop->iteration }}</th>
-                            <td> <a href="{{route('posts.show',$post->id)}}">{{ $post->title }}</a> </td>
-                            <td> {{ $post->author->name }} </td>
-                            <td> {{ $post->created_at }} </td>
-                            <td> {{ $post->updated_at }} </td>
-                            <td>
-                                <button type="button" onclick="window.location.href='{{route('posts.edit', $post->id)}}'" class="btn btn-primary">Editar</button>
-                                <form class="dashboard-remove" action='{{route('posts.destroy', $post->id)}}' method='POST'>
-                                    {{ csrf_field() }}
-                                    @method('DELETE')
-                                    <button type="submit" onclick="return confirm('Tem certeza?')" class="btn btn-danger btn-remover">Remover</button>
-                                </form>
-                            </td>
-                        </tr>
-                    @endforeach
-                    <div class="row mb-3">
-                        <div class="col">
-                            <a class="btn btn-primary" href="?see=posts">Posts</a>
-                            <a class="btn btn-primary" href="?see=projetos">Projetos</a>
-
-
-                        </div>
-                        <div class="col ms-auto d-flex justify-content-end">
-                            <a class=" btn btn-success" href="{{ route('posts.create') }}">Adicionar Novo Post</a>
-                        </div>
-                    </div>
-
-                    
-                @endif
-                {{-- ARRUMAR A PAGINACAO ESTA DANDO BUGS --}}
-                {{request()->input('see') == "projetos" ? $produtos->links() : $posts->links()  }}
-            </tbody>
-        </table>
+        <div style="padding: 8px; margin-top: 5px;" class="row bg-dark rounded text-dark gap-4 justify-content-center">
+            <div class="col-md-4 col-7 bg-light rounded ">
+                <canvas id="grafico"></canvas>
+            </div>
+            <div class="col-md col-12  bg-light border rounded text-dark">
+                <h1 class="text-center">Mais Recentes</h1>
+                <div class="row text-center card-dashboard">
+                    @if($posts->count())
+                        <p><a href="{{route('posts.show',$posts[0]->id)}}">{{ $posts[0]->title }}</a></p>
+                        <span class="small">{{ $posts[0]->created_at }}</span>
+                        <hr>
+                        <p><a href="{{route('projetos.show',$produtos[0]->id)}}">{{ $produtos[0]->name }}</a></p>
+                        <p> {{ $produtos[0]->description }} </p>
+                        <span class="small">{{ $produtos[0]->created_at }}</span>
+                    @else
+                        <p>Sem posts no momento</p>
+                    @endif
+                </div>
+            </div>
+        </div>
     </div>
 
-
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        const grafico = document.getElementById('grafico');
+        console.log(grafico);
+        const data = {
+            labels: [
+                'Posts',
+                'Projetos',
+                'Usuários'
+            ],
+            datasets: [{
+                label: 'Itens do Site',
+                data: [{{$posts->count()}},{{$produtos->count()}}, {{$users}}],
+                backgroundColor: [
+                'rgb(255, 99, 132)',
+                'rgb(54, 162, 235)',
+                'rgb(255, 205, 86)'
+                ],
+                hoverOffset: 4
+            }]
+        };
+        new Chart(grafico, {
+            type: 'pie',
+            data: data
+        });
+    </script>
 
 @endsection
 

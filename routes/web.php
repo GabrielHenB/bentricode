@@ -1,7 +1,9 @@
 <?php
 
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProdutoController;
+use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -42,17 +44,18 @@ Route::post('create',[\App\Http\Controllers\UserController::class,"store"])->mid
 Route::get('logout', [\App\Http\Controllers\AuthController::class,"logout"])->name('logout')->middleware('auth');
 
 //  =============== ROTAS ADMIN ========================
-// TODO: agrupar rotas em um mesmo middleware admin
 
 Route::middleware('can:admin')->group(function(){
     Route::resource('projetos', ProdutoController::class)->except(['index','show']);
     //dashboard
-    Route::get('dashboard', function () {
-        return view('admin.dashboard', 
-        [
-            'posts' => \App\Models\Post::paginate(8),
-            'produtos' => \App\Models\Produto::paginate(8)
-    ]);
-    })->name('dashboard');
+    Route::get('dashboard', [DashboardController::class,'index'])->name('dashboard');
+    Route::get('dashboard/posts', [DashboardController::class,'posts']);
+    Route::get('dashboard/projs',[DashboardController::class,'projects']);
+    Route::get('dashboard/users',[DashboardController::class,'users']);
+    //users
+    Route::get('users/{user}/edit',[UserController::class,'edit'])->name('users.edit');
+    Route::patch('users/{user}',[UserController::class,'update'])->name('users.update');
+    Route::delete('users/{user}/destroy',[UserController::class,'destroy'])->name('users.destroy');
 });
 Route::resource('projetos', ProdutoController::class)->only(['index','show']);
+Route::get('users/{user}',[UserController::class,'read']);

@@ -71,7 +71,7 @@ export default class FormController{
 
 
             //Nao vazio
-            if(!field.value){
+            if(!field.value && fName !== 'password' && field.type !== 'file'){
                 isOk = false;
                 this.throwError(field, `${l} não pode estar vazio!`)
             }
@@ -114,6 +114,16 @@ export default class FormController{
     validateFiles(field){
         let isOk = true;
         console.log(field);
+
+        //Se nao for requerido e for nulo ok. Se nao for nulo ele precisa ser verificado normalmente.
+        if(field.classList.contains('notRequired') && !field.value){
+            return true; //Se nao for requerido e estiver vazio tudo ok
+        }
+        //Se for nulo
+        if(!field.value){
+            this.throwError(field, `Nenhum arquivo foi informado!`);
+            return false; //Nulo nao precisa nem olhar se eh real
+        }
         const theFile = field.files[0];
         //Se existir
         if(theFile){
@@ -137,9 +147,18 @@ export default class FormController{
         }
         return isOk;
     }
-
+    /**
+     * Isso valida campos de senha no client side.
+     * @param {HTMLInputElement} field 
+     * @returns boolean
+     */
     validatePwd(field){
         let isOk = true;
+        //Se for um edit ele nao precisa validar se estiver vazio a string
+        if(field.classList.contains('editUserPasswordInput') && field.value.length <= 0){
+            console.log("Senha inserida:", field.value);
+            return isOk; //Nao necessario validar ja que pode ser nulo nesse caso
+        }
         //Tamanho
         if(field.value.length < this.PWD_MIN_LEN || field.value.length > this.PWD_MAX_LEN){
             isOk = false;
@@ -153,13 +172,25 @@ export default class FormController{
         return isOk;
     }
 
+    /**
+     * Isso valida campos de name. Se conter a classe excludeMatching nao verifica caracteres especiais.
+     * @param {HTMLInputElement} field 
+     * @returns boolean
+     */
     validateNames(field){
         let isOk = true;
+        let shouldMatch = true;
+        
+        if(field.classList.contains('excludeMatching')){
+            shouldMatch = false;
+        }
+
+
         if(field.value.length < this.NAME_MIN_LEN || field.value.length > this.NAME_MAX_LEN){
             isOk = false;
             this.throwError(field, `O Nome deve ter entre ${this.NAME_MIN_LEN} e ${this.NAME_MAX_LEN} caracteres!`);
         }
-        if(!field.value.match(/^[a-zA-Z0-9]+$/)){
+        if(shouldMatch && !field.value.match(/^[a-zA-Z0-9]+$/)){
             isOk = false;
             this.throwError(field, `O nome contém caracteres inválidos!`);
         }

@@ -46,8 +46,9 @@
             <div class="card bg-light">
                 <div class="card-body">
                     <!-- Comment form-->
-                    <form class="mb-4">
+                    <form class="mb-4 comments-form">
                         <textarea class="form-control" rows="3" placeholder="Participe da conversa com seu comentário!"></textarea>
+                        <button type='submit' class='mt-2 btn-secondary btn'>Postar</button>
                     </form>
                     <!-- Comment with nested comments-->
                     <div class="d-flex mb-4">
