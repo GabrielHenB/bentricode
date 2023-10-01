@@ -30,4 +30,12 @@ Márlon <br>
 ![LinkedIn](https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white)
 </a>
 
+## Alguns prints do projeto
 
+<img src="./illustrational/la1.JPG" />
+<img src="./illustrational/la2.JPG" />
+<img src="./illustrational/la3.JPG" />
+<img src="./illustrational/la4.JPG" />
+<img src="./illustrational/la5.JPG" />
+<img src="./illustrational/la6.JPG" />
+<img src="./illustrational/la7.JPG" />
